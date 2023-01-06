@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "q": {
+      "type": "string",
+      "example": "florida"
+    },
+    "n": {
+      "type": "integer",
+      "format": "int64",
+      "example": "5"
+    },
+    "geocoder_fallback": {
+      "type": "boolean"
+    }
+  }
+}

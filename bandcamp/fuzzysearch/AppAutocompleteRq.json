@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "q": {
+      "type": "string"
+    },
+    "param_with_locations": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "q"
+  ]
+}

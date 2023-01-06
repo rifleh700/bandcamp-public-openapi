@@ -1,0 +1,71 @@
+{
+  "type": "object",
+  "properties": {
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fan_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "1272071"
+          },
+          "featured_track_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "2311377775"
+          },
+          "username": {
+            "type": "string",
+            "example": "littlequack"
+          },
+          "name": {
+            "type": "string",
+            "example": "littlequack"
+          },
+          "url": {
+            "type": "string",
+            "example": "https://bandcamp.com/littlequack"
+          },
+          "why": {
+            "type": "string",
+            "example": "This felt like a very well made Album with a song for each different taste yet still holding that catchy vibe to it all along! Great Stuff!"
+          },
+          "item_type": {
+            "type": "string",
+            "example": "a"
+          },
+          "item_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "4152046122"
+          },
+          "mod_date": {
+            "type": "string",
+            "example": "30 Dec 2018 03:21:39 GMT"
+          },
+          "image_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "9330266"
+          },
+          "is_montage_image": {
+            "type": "boolean"
+          },
+          "token": {
+            "type": "string",
+            "example": "1:1546140099:1272071:1:1:0"
+          },
+          "fav_track_title": {
+            "type": "string",
+            "example": "Last Dance of The Night"
+          }
+        }
+      }
+    },
+    "more_available": {
+      "type": "boolean"
+    }
+  }
+}

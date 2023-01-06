@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "tralbum_id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "tralbum_type": {
+      "type": "string",
+      "enum": ["a", "t"]
+    }
+  },
+  "required": [
+    "tralbum_id",
+    "tralbum_type"
+  ]
+}

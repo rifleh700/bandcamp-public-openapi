@@ -1,0 +1,123 @@
+{
+  "type": "object",
+  "properties": {
+    "fan_id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "7862021"
+    },
+    "private": {
+      "type": "string"
+    },
+    "disabled_date": {
+      "type": "string"
+    },
+    "signup_date": {
+      "type": "string",
+      "example": "28 Nov 2021 06:32:27 GMT"
+    },
+    "name": {
+      "type": "string",
+      "example": "mistdemon"
+    },
+    "username": {
+      "type": "string",
+      "example": "mistdemon"
+    },
+    "location": {
+      "type": "string",
+      "example": "Tucson, Arizona"
+    },
+    "image_id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "27450371"
+    },
+    "is_montage_image": {
+      "type": "boolean"
+    },
+    "bio": {
+      "type": "string",
+      "example": "Ayo we listenin to beats dat mfin S L A P "
+    },
+    "website_url": {
+      "type": "string"
+    },
+    "fav_genre_id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "10"
+    },
+    "fav_genre_name": {
+      "type": "string",
+      "example": "Electronic"
+    },
+    "header_image_id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "26868839"
+    },
+    "header_image_is_custom": {
+      "type": "boolean"
+    },
+    "header_image_align": {
+      "type": "integer",
+      "format": "int64",
+      "example": "0"
+    },
+    "collection_size": {
+      "type": "integer",
+      "format": "int64",
+      "example": "224"
+    },
+    "wishlist_size": {
+      "type": "integer",
+      "format": "int64",
+      "example": "35"
+    },
+    "wishlist_private": {
+      "type": "boolean"
+    },
+    "followers_count": {
+      "type": "integer",
+      "format": "int64",
+      "example": "27"
+    },
+    "following_count": {
+      "type": "integer",
+      "format": "int64",
+      "example": "78"
+    },
+    "following_fans_count": {
+      "type": "integer",
+      "format": "int64",
+      "example": "26"
+    },
+    "following_bands_count": {
+      "type": "integer",
+      "format": "int64",
+      "example": "52"
+    },
+    "following_genres_count": {
+      "type": "integer",
+      "format": "int64",
+      "example": "10"
+    },
+    "following_genres_private": {
+      "type": "boolean"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "7862021"
+    },
+    "is_following": {
+      "type": "boolean"
+    },
+    "items_in_common": {
+      "type": "integer",
+      "format": "int64",
+      "example": "0"
+    }
+  }
+}

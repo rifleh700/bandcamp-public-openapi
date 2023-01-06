@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "older_than_token": {
+      "type": "string",
+      "example": "1674428400:5901"
+    }
+  }
+}

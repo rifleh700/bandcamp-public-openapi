@@ -1,0 +1,261 @@
+{
+  "type": "object",
+  "properties": {
+    "show_id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "611"
+    },
+    "date": {
+      "type": "string",
+      "example": "15 Dec 2022 00:00:00 GMT"
+    },
+    "published_date": {
+      "type": "string",
+      "example": "16 Dec 2022 00:00:00 GMT"
+    },
+    "title": {
+      "type": "string",
+      "example": "The Hip Hop Show"
+    },
+    "subtitle": {
+      "type": "string",
+      "example": "Master Of Ceremonies"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "show_image_id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "30802544"
+    },
+    "show_screen_image_id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "30802546"
+    },
+    "show_v2_image_id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "30802544"
+    },
+    "image_caption": {
+      "type": "string"
+    },
+    "audio_url_hash": {
+      "type": "object",
+      "properties": {
+        "subdomain": {
+          "type": "string",
+          "example": "thetrickytrees"
+        },
+        "custom_domain": {
+          "type": "string"
+        },
+        "custom_domain_verified": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "slug": {
+          "type": "string",
+          "example": "bandcamp-radio-hip-hop-show-53"
+        },
+        "item_type": {
+          "type": "string",
+          "example": "t"
+        }
+      }
+    },
+    "audio_title": {
+      "type": "string",
+      "example": "Bandcamp Radio Hip-Hop Show 53"
+    },
+    "audio_stream": {
+      "type": "object",
+      "properties": {
+        "opus-lo": {
+          "type": "string",
+          "example": "https://popplers5.bandcamp.com/download/track?enc=opus-lo&fsig=863c1a3760c1802934a3223728dde236&id=1361452104&stream=1&ts=1673021562.0"
+        },
+        "mp3-128": {
+          "type": "string",
+          "example": "https://bandcamp.com/stream_redirect?enc=mp3-128&track_id=1361452104&ts=1673021561&t=2088f51c4e9ab8a74f75990781c93fe883b9b09b"
+        }
+      }
+    },
+    "audio_track_id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "1361452104"
+    },
+    "stream_infos": {
+      "type": "object",
+      "properties": {
+        "encodings_id": {
+          "type": "integer",
+          "format": "int64",
+          "example": "2445413003"
+        },
+        "format": {
+          "type": "integer",
+          "format": "int64",
+          "example": "101"
+        },
+        "file_id": {
+          "type": "integer",
+          "format": "int64",
+          "example": "1643935659"
+        },
+        "metadata_crc": {
+          "type": "string"
+        }
+      }
+    },
+    "audio_duration": {
+      "type": "number",
+      "example": "4622.81"
+    },
+    "button_color": {
+      "type": "string",
+      "example": "8c6d9a"
+    },
+    "dark_mode": {
+      "type": "string"
+    },
+    "short_desc": {
+      "type": "string",
+      "example": "Honey Blu guests on the last Hip-Hop show of the year."
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "track_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "3832765031"
+          },
+          "title": {
+            "type": "string",
+            "example": "Epicenter"
+          },
+          "url_hints": {
+            "type": "object",
+            "properties": {
+              "subdomain": {
+                "type": "string",
+                "example": "headnodic"
+              },
+              "custom_domain": {
+                "type": "string"
+              },
+              "custom_domain_verified": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "slug": {
+                "type": "string",
+                "example": "junk-drawer-vol-2"
+              },
+              "item_type": {
+                "type": "string",
+                "example": "a"
+              }
+            }
+          },
+          "track_url": {
+            "type": "string",
+            "example": "https://headnodic.bandcamp.com/track/epicenter"
+          },
+          "artist": {
+            "type": "string",
+            "example": "Headnodic"
+          },
+          "location_text": {
+            "type": "string",
+            "example": "Oakland, California"
+          },
+          "album_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "2018799184"
+          },
+          "album_title": {
+            "type": "string",
+            "example": "Junk Drawer Vol.2"
+          },
+          "is_preorder": {
+            "type": "boolean"
+          },
+          "band_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "1802905033"
+          },
+          "timecode": {
+            "type": "integer",
+            "format": "int64",
+            "example": "0"
+          },
+          "track_art_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "2153339283"
+          },
+          "bio_image_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "13469101"
+          },
+          "merch_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64",
+              "example": "3465077070"
+            }
+          },
+          "package_image_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64",
+              "example": "30735154"
+            }
+          },
+          "is_set_price": {
+            "type": "boolean"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int64",
+            "example": "10"
+          },
+          "is_purchasable": {
+            "type": "boolean"
+          },
+          "currency": {
+            "type": "string",
+            "example": "USD"
+          },
+          "label": {
+            "type": "string"
+          },
+          "require_email": {
+            "type": "boolean"
+          },
+          "album_url": {
+            "type": "string",
+            "example": "https://headnodic.bandcamp.com/album/junk-drawer-vol-2"
+          },
+          "url": {
+            "type": "string",
+            "example": "https://headnodic.bandcamp.com/album/junk-drawer-vol-2"
+          }
+        }
+      }
+    }
+  }
+}

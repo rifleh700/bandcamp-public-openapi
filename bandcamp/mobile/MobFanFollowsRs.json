@@ -1,0 +1,75 @@
+{
+  "type": "object",
+  "properties": {
+    "following_fans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fan_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "273800"
+          },
+          "name": {
+            "type": "string",
+            "example": "JayRenard"
+          },
+          "username": {
+            "type": "string"
+          },
+          "image_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "28865497"
+          },
+          "location": {
+            "type": "string"
+          },
+          "date_followed": {
+            "type": "integer",
+            "format": "int64",
+            "example": "1665807133"
+          },
+          "followed_by_fan": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "following_bands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "band_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "600742076"
+          },
+          "name": {
+            "type": "string",
+            "example": "miya lowe"
+          },
+          "image_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "25185699"
+          },
+          "location": {
+            "type": "string",
+            "example": "San Francisco, California"
+          },
+          "date_followed": {
+            "type": "integer",
+            "format": "int64",
+            "example": "1664155185"
+          },
+          "followed_by_fan": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

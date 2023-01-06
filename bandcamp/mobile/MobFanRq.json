@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "fan_id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "older_than": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "fan_id"
+  ]
+}

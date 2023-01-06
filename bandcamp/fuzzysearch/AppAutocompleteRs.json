@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "properties": {
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "example": "b"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "4245275253"
+          },
+          "art_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "img_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "30175858"
+          },
+          "name": {
+            "type": "string",
+            "example": "Vapor Vagabond"
+          },
+          "location": {
+            "type": "string",
+            "example": "New York, New York"
+          },
+          "is_label": {
+            "type": "boolean"
+          },
+          "tag_names": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "electronic"
+            }
+          },
+          "img": {
+            "type": "string",
+            "example": "https://f4.bcbits.com/img/0030175858_23.jpg"
+          },
+          "genre_name": {
+            "type": "string",
+            "example": "Ambient"
+          },
+          "stat_params": {
+            "type": "string",
+            "example": "search_item_id=4245275253&search_item_type=b&search_match_part=%3F&search_page_id=2361452700&search_page_no=0&search_rank=2"
+          },
+          "part": {
+            "type": "string",
+            "example": "z"
+          },
+          "url": {
+            "type": "string",
+            "example": "https://vaporvagabond.bandcamp.com"
+          }
+        }
+      }
+    },
+    "time_ms": {
+      "type": "integer",
+      "format": "int64",
+      "example": "19"
+    }
+  }
+}
