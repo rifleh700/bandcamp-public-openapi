@@ -1,0 +1,291 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "1280274042"
+    },
+    "name": {
+      "type": "string",
+      "example": "100% ELECTRONICA"
+    },
+    "bio_image_id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "15863258"
+    },
+    "bio_image_width": {
+      "type": "integer",
+      "format": "int64",
+      "example": "511"
+    },
+    "bio_image_height": {
+      "type": "integer",
+      "format": "int64",
+      "example": "511"
+    },
+    "bio": {
+      "type": "string",
+      "example": "Founded in 2015, in Brooklyn, NY from the minds of George Clanton and Lindsey French. 100% Electronica is the largest independent record label specializing in the electronic internet music sub-genre, vaporwave. The label boasts a roster of iconic artists such as George Clanton, Equip, Negative Gemini, S U R F I N G, and more. 100% Electronica has a dedicated worldwide community."
+    },
+    "bandcamp_url": {
+      "type": "string",
+      "example": "https://100pelectronica.bandcamp.com"
+    },
+    "sites": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "example": "http://www.100percentelectronica.com"
+          },
+          "title": {
+            "type": "string",
+            "example": "100percentelectronica.com"
+          }
+        }
+      }
+    },
+    "discography": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "3338270193"
+          },
+          "item_type": {
+            "type": "string",
+            "example": "album"
+          },
+          "artist_name": {
+            "type": "string",
+            "example": "Equip"
+          },
+          "band_name": {
+            "type": "string",
+            "example": "Equip"
+          },
+          "title": {
+            "type": "string",
+            "example": "Live in LA"
+          },
+          "art_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "3314882065"
+          },
+          "release_date": {
+            "type": "string",
+            "example": "09 Dec 2022 00:00:00 GMT"
+          },
+          "is_purchasable": {
+            "type": "boolean"
+          },
+          "band_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "2401527523"
+          }
+        }
+      }
+    },
+    "location": {
+      "type": "string",
+      "example": "Los Angeles, California"
+    },
+    "header_image_id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "18011958"
+    },
+    "shows": {
+      "type": "array",
+      "items": {
+      }
+    },
+    "navbar_titles": {
+      "type": "object",
+      "properties": {
+        "m": {
+          "type": "string",
+          "example": "music"
+        },
+        "p": {
+          "type": "string",
+          "example": "merch"
+        },
+        "l": {
+          "type": "string",
+          "example": "live streams"
+        },
+        "a": {
+          "type": "string",
+          "example": "artists"
+        },
+        "v": {
+          "type": "string",
+          "example": "video"
+        },
+        "u": {
+          "type": "string",
+          "example": "audio"
+        },
+        "s": {
+          "type": "string",
+          "example": "subscribe"
+        },
+        "c": {
+          "type": "string",
+          "example": "community"
+        }
+      }
+    },
+    "merch": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "3087489910"
+          },
+          "type_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "2"
+          },
+          "type_name": {
+            "type": "string",
+            "example": "Vinyl LP"
+          },
+          "title": {
+            "type": "string",
+            "example": "LTD Edition Orange Vinyl LP"
+          },
+          "grid_index": {
+            "type": "integer",
+            "format": "int64",
+            "example": "1"
+          },
+          "subscriber_only": {
+            "type": "boolean"
+          },
+          "arts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "3380583474"
+                },
+                "file_name": {
+                  "type": "string",
+                  "example": "3212666951"
+                },
+                "index": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "0"
+                },
+                "image_id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "30024252"
+                },
+                "width": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "3000"
+                },
+                "height": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "3000"
+                },
+                "crc": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "893774658"
+                }
+              }
+            }
+          },
+          "album_art": {
+            "type": "string"
+          },
+          "download_type": {
+            "type": "string",
+            "example": "a"
+          },
+          "download_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "3338270193"
+          },
+          "download_title": {
+            "type": "string",
+            "example": "Live in LA"
+          },
+          "download_has_audio": {
+            "type": "boolean"
+          },
+          "band_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "2401527523"
+          },
+          "artist_name": {
+            "type": "string",
+            "example": "Equip"
+          },
+          "in_stock": {
+            "type": "boolean"
+          },
+          "is_live_ticket": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "artists": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "2735295020"
+          },
+          "name": {
+            "type": "string",
+            "example": "Windows96"
+          },
+          "image_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "17795727"
+          },
+          "featured_date": {
+            "type": "integer",
+            "format": "int64",
+            "example": "0"
+          },
+          "location": {
+            "type": "string",
+            "example": "São Paulo, Brazil"
+          }
+        }
+      }
+    }
+  }
+}

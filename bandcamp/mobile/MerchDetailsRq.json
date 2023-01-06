@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "band_id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "package_ids": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "band_id",
+    "package_ids"
+  ]
+}

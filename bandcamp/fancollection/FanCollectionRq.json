@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "required": [
+    "fan_id",
+    "older_than_token",
+    "count"
+  ],
+  "properties": {
+    "fan_id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "1810501"
+    },
+    "older_than_token": {
+      "type": "string",
+      "example": "1522419189:1563087744:a:61:"
+    },
+    "count": {
+      "type": "integer",
+      "format": "int64",
+      "example": "20"
+    }
+  }
+}

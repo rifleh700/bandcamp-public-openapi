@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "required": [
+    "search_term"
+  ],
+  "properties": {
+    "search_term": {
+      "type": "string",
+      "example": "vapor"
+    },
+    "count": {
+      "type": "integer",
+      "format": "int64",
+      "example": "5"
+    }
+  }
+}

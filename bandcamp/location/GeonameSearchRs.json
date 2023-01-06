@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "ok": {
+      "type": "boolean"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "4155751"
+          },
+          "name": {
+            "type": "string",
+            "example": "Florida"
+          },
+          "fullname": {
+            "type": "string",
+            "example": "Florida, United States"
+          }
+        }
+      }
+    },
+    "count": {
+      "type": "integer",
+      "format": "int64",
+      "example": "5"
+    }
+  }
+}

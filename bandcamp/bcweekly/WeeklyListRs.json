@@ -1,0 +1,60 @@
+{
+  "type": "object",
+  "properties": {
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "609"
+          },
+          "title": {
+            "type": "string",
+            "example": "The Metal Show"
+          },
+          "date": {
+            "type": "string",
+            "example": "09 Dec 2022 00:00:00 GMT"
+          },
+          "subtitle": {
+            "type": "string",
+            "example": "Best Metal of 2022"
+          },
+          "image_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "30732454"
+          },
+          "screen_image_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "30732455"
+          },
+          "v2_image_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "30732453"
+          },
+          "published_date": {
+            "type": "string",
+            "example": "09 Dec 2022 00:00:00 GMT"
+          },
+          "image_caption": {
+            "type": "string"
+          },
+          "desc": {
+            "type": "string",
+            "example": "Frank Albanese joins a supersized, year-end edition of the show to chat about Hath's latest LP and his favorite albums of 2022."
+          },
+          "button_color": {
+            "type": "string",
+            "example": "2d131a"
+          }
+        }
+      }
+    }
+  }
+}

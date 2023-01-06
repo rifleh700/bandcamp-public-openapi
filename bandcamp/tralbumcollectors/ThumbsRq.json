@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "tralbum_type": {
+      "type": "string",
+      "example": "a"
+    },
+    "tralbum_id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "4152046122"
+    },
+    "token": {
+      "type": "string",
+      "example": "1:1645888634:5808946:0:1:0"
+    },
+    "count": {
+      "type": "integer",
+      "format": "int64",
+      "example": "80"
+    }
+  }
+}

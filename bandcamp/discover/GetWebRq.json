@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "properties": {
+    "g": {
+      "type": "string",
+      "description": "Genre",
+      "example": "electronic"
+    },
+    "t": {
+      "type": "string",
+      "description": "Subgenre",
+      "example": "house"
+    },
+    "s": {
+      "type": "string",
+      "description": "Sort",
+      "enum": ["top", "new", "rec"]
+    },
+    "r": {
+      "type": "string",
+      "description": "Recommendations",
+      "enum": ["most", "latest"]
+    },
+    "f": {
+      "type": "string",
+      "description": "Format",
+      "enum": ["all", "digital", "vinyl", "cd", "cassette"]
+    },
+    "gn": {
+      "type": "integer",
+      "format": "int64",
+      "description": "ID of the location (GeoName)",
+      "example": "4180439"
+    },
+    "p": {
+      "type": "integer",
+      "format": "int64",
+      "example": "0",
+      "description": "Page"
+    }
+  },
+  "required": [
+    "p",
+    "s"
+  ]
+}

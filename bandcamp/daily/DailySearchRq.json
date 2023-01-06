@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "required": [
+    "q",
+    "page"
+  ],
+  "properties": {
+    "q": {
+      "type": "string",
+      "example": "vaporwave"
+    },
+    "page": {
+      "type": "integer",
+      "format": "int64",
+      "example": "1"
+    }
+  }
+}

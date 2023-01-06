@@ -1,0 +1,68 @@
+{
+  "type": "object",
+  "properties": {
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fan_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "7068047"
+          },
+          "featured_track_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "username": {
+            "type": "string",
+            "example": "tyreeandretti"
+          },
+          "name": {
+            "type": "string",
+            "example": "tyreeandretti"
+          },
+          "url": {
+            "type": "string",
+            "example": "https://bandcamp.com/tyreeandretti"
+          },
+          "why": {
+            "type": "string"
+          },
+          "item_type": {
+            "type": "string",
+            "example": "a"
+          },
+          "item_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "4152046122"
+          },
+          "mod_date": {
+            "type": "string",
+            "example": "26 Feb 2022 07:42:14 GMT"
+          },
+          "image_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "29111232"
+          },
+          "is_montage_image": {
+            "type": "boolean"
+          },
+          "token": {
+            "type": "string",
+            "example": "1:1645861334:7068047:0:1:0"
+          },
+          "fav_track_title": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "more_available": {
+      "type": "boolean"
+    }
+  }
+}

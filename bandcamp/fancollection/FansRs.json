@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "properties": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "fan_id": {
+          "type": "integer",
+          "format": "int64",
+          "example": "4423988"
+        },
+        "band_id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "fan_url": {
+          "type": "string"
+        },
+        "image_id": {
+          "type": "integer",
+          "format": "int64",
+          "example": "17660122"
+        },
+        "trackpipe_url": {
+          "type": "string",
+          "example": "https://bandcamp.com/jefftrend"
+        },
+        "name": {
+          "type": "string",
+          "example": "jeff trend"
+        },
+        "is_following": {
+          "type": "boolean"
+        },
+        "location": {
+          "type": "string",
+          "example": "Seattle, Washington"
+        },
+        "date_followed": {
+          "type": "string",
+          "example": "18 Feb 2022 11:48:40 GMT"
+        },
+        "token": {
+          "type": "string",
+          "example": "1645184920:4423988"
+        }
+      }
+    }
+  },
+  "more_available": {
+    "type": "boolean"
+  },
+  "last_token": {
+    "type": "string",
+    "example": "1542056203:3326507"
+  }
+}

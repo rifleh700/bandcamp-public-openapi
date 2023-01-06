@@ -1,0 +1,258 @@
+{
+  "type": "object",
+  "properties": {
+    "ok": {
+      "type": "boolean"
+    },
+    "filters": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tralbum_type": {
+            "type": "string",
+            "example": "a"
+          },
+          "tralbum_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "3741731908"
+          },
+          "item_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "3741731908"
+          },
+          "title": {
+            "type": "string",
+            "example": "Snacks For The Night Time"
+          },
+          "art_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "2697830756"
+          },
+          "audio_track_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "2491372507"
+          },
+          "featured_track_title": {
+            "type": "string",
+            "example": "Collide-O-Scope"
+          },
+          "featured_track_number": {
+            "type": "integer",
+            "format": "int64",
+            "example": "1"
+          },
+          "artist": {
+            "type": "string",
+            "example": "One More Time Ago"
+          },
+          "band_name": {
+            "type": "string",
+            "example": "Section 9"
+          },
+          "subdomain": {
+            "type": "string",
+            "example": "section9tapes"
+          },
+          "custom_domain": {
+            "type": "string"
+          },
+          "custom_domain_verified": {
+            "type": "boolean"
+          },
+          "genre_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "10"
+          },
+          "slug_text": {
+            "type": "string",
+            "example": "snacks-for-the-night-time"
+          },
+          "item_type": {
+            "type": "string",
+            "example": "a"
+          },
+          "band_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "2017668235"
+          },
+          "is_preorder": {
+            "type": "boolean"
+          },
+          "packages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "1330962887"
+                },
+                "price": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "integer",
+                      "format": "int64",
+                      "example": "950"
+                    },
+                    "currency": {
+                      "type": "string",
+                      "example": "USD"
+                    },
+                    "is_money": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "is_set_price": {
+                  "type": "boolean"
+                },
+                "currency": {
+                  "type": "string",
+                  "example": "USD"
+                },
+                "type_str": {
+                  "type": "string",
+                  "example": "cassette"
+                },
+                "is_vinyl": {
+                  "type": "boolean"
+                },
+                "image_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": "25733830"
+                  }
+                },
+                "image": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int64",
+                      "example": "25733830"
+                    },
+                    "width": {
+                      "type": "integer",
+                      "format": "int64",
+                      "example": "1498"
+                    },
+                    "height": {
+                      "type": "integer",
+                      "format": "int64",
+                      "example": "1124"
+                    }
+                  }
+                },
+                "quantity": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "num_comments": {
+            "type": "integer",
+            "format": "int64",
+            "example": "0"
+          },
+          "band_url": {
+            "type": "string",
+            "example": "https://section9tapes.bandcamp.com"
+          },
+          "tralbum_url": {
+            "type": "string",
+            "example": "https://section9tapes.bandcamp.com/album/snacks-for-the-night-time"
+          },
+          "genre": {
+            "type": "string",
+            "example": "electronic"
+          },
+          "audio_url": {
+            "type": "object",
+            "properties": {
+              "mp3-128": {
+                "type": "string",
+                "example": "https://t4.bcbits.com/stream/2a5039a455a6f356228bd909aa6946a2/mp3-128/2491372507?p=0&ts=1670847963&t=0944a22045eced981d25ae68bb507a00eecacd58&token=1670847963_42339eb51d0b6303a42f5ddba709b22c524d9163"
+              }
+            }
+          }
+        }
+      }
+    },
+    "more_available": {
+      "type": "boolean"
+    },
+    "discover_spec": {
+      "type": "object",
+      "properties": {
+        "genre_id": {
+          "type": "integer",
+          "format": "int64",
+          "example": "0"
+        },
+        "genre_name": {
+          "type": "string"
+        },
+        "genre_pretty_name": {
+          "type": "string"
+        },
+        "tag_id": {
+          "type": "integer",
+          "format": "int64",
+          "example": "351132955"
+        },
+        "tag_name": {
+          "type": "string",
+          "example": "vaporwave"
+        },
+        "tag_pretty_name": {
+          "type": "string",
+          "example": "vaporwave"
+        },
+        "geoname_id": {
+          "type": "integer",
+          "format": "int64",
+          "example": "0"
+        },
+        "geoname_name": {
+          "type": "string"
+        },
+        "format_type_id": {
+          "type": "integer",
+          "format": "int64",
+          "example": "0"
+        },
+        "format": {
+          "type": "string",
+          "example": "all"
+        },
+        "spec_name": {
+          "type": "string",
+          "example": "vaporwave/all"
+        },
+        "discover_id": {
+          "type": "integer",
+          "format": "int64",
+          "example": "576"
+        },
+        "dig_deeper_followed": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

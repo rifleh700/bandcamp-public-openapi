@@ -1,0 +1,143 @@
+{
+  "type": "object",
+  "properties": {
+    "auto": {
+      "type": "object",
+      "properties": {
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "b"
+              },
+              "id": {
+                "type": "integer",
+                "format": "int64",
+                "example": "40247404"
+              },
+              "art_id": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "img_id": {
+                "type": "integer",
+                "format": "int64",
+                "example": "17620204"
+              },
+              "name": {
+                "type": "string",
+                "example": "Vaporwave Tapes Brasil"
+              },
+              "item_url_root": {
+                "type": "string",
+                "example": "https://vwtbr.bandcamp.com"
+              },
+              "location": {
+                "type": "string",
+                "example": "Brazil"
+              },
+              "is_label": {
+                "type": "boolean"
+              },
+              "tag_names": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "Electronic"
+                }
+              },
+              "img": {
+                "type": "string",
+                "example": "https://f4.bcbits.com/img/0017620204_23.jpg"
+              },
+              "genre_name": {
+                "type": "string",
+                "example": "Electronic"
+              },
+              "stat_params": {
+                "type": "string",
+                "example": "search_item_id=40247404&search_item_type=b&search_match_part=%3F&search_page_id=2319640601&search_page_no=0&search_rank=1"
+              }
+            }
+          }
+        },
+        "stat_params_for_tag": {
+          "type": "string",
+          "example": "search_item_id=2&search_item_type=%40&search_match_part=%3F&search_page_id=2319640601&search_page_no=0&search_rank=1"
+        },
+        "time_ms": {
+          "type": "integer",
+          "format": "int64",
+          "example": "143"
+        }
+      }
+    },
+    "tag": {
+      "type": "object",
+      "properties": {
+        "matches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "display_tag_id": {
+                "type": "integer",
+                "format": "int64",
+                "example": "351132955"
+              },
+              "score": {
+                "type": "integer",
+                "format": "int64",
+                "example": "0"
+              },
+              "count": {
+                "type": "integer",
+                "format": "int64",
+                "example": "65150"
+              },
+              "norm_name": {
+                "type": "string",
+                "example": "vaporwave"
+              },
+              "display_name": {
+                "type": "string",
+                "example": "vaporwave"
+              }
+            }
+          }
+        },
+        "count": {
+          "type": "integer",
+          "format": "int64",
+          "example": "1"
+        },
+        "time_ms": {
+          "type": "integer",
+          "format": "int64",
+          "example": "1"
+        }
+      }
+    },
+    "genre": {
+      "type": "object",
+      "properties": {
+        "match": {
+          "type": "object",
+          "properties": {
+            "genre": {
+              "type": "string",
+              "example": "electronic"
+            },
+            "subgenre": {
+              "type": "string",
+              "example": "vaporwave"
+            }
+          }
+        }
+      }
+    }
+  }
+}
