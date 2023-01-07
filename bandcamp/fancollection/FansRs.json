@@ -1,58 +1,61 @@
 {
   "type": "object",
   "properties": {
-    "type": "array",
-    "items": {
-      "type": "object",
-      "properties": {
-        "fan_id": {
-          "type": "integer",
-          "format": "int64",
-          "example": "4423988"
-        },
-        "band_id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "fan_url": {
-          "type": "string"
-        },
-        "image_id": {
-          "type": "integer",
-          "format": "int64",
-          "example": "17660122"
-        },
-        "trackpipe_url": {
-          "type": "string",
-          "example": "https://bandcamp.com/jefftrend"
-        },
-        "name": {
-          "type": "string",
-          "example": "jeff trend"
-        },
-        "is_following": {
-          "type": "boolean"
-        },
-        "location": {
-          "type": "string",
-          "example": "Seattle, Washington"
-        },
-        "date_followed": {
-          "type": "string",
-          "example": "18 Feb 2022 11:48:40 GMT"
-        },
-        "token": {
-          "type": "string",
-          "example": "1645184920:4423988"
+    "followeers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fan_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "1954345"
+          },
+          "band_id": {
+            "type": "string",
+            "format": "nullable"
+          },
+          "fan_url": {
+            "type": "string",
+            "format": "nullable"
+          },
+          "image_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "14050865"
+          },
+          "trackpipe_url": {
+            "type": "string",
+            "example": "https://bandcamp.com/necroxiii"
+          },
+          "name": {
+            "type": "string",
+            "example": "NECRO XIII"
+          },
+          "is_following": {
+            "type": "boolean"
+          },
+          "location": {
+            "type": "string",
+            "format": "nullable"
+          },
+          "date_followed": {
+            "type": "string",
+            "example": "16 Dec 2018 04:06:45 GMT"
+          },
+          "token": {
+            "type": "string",
+            "example": "1544933205:1954345"
+          }
         }
       }
+    },
+    "more_available": {
+      "type": "boolean"
+    },
+    "last_token": {
+      "type": "string",
+      "example": "1511858751:1937616"
     }
-  },
-  "more_available": {
-    "type": "boolean"
-  },
-  "last_token": {
-    "type": "string",
-    "example": "1542056203:3326507"
   }
 }
