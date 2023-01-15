@@ -12,892 +12,100 @@
   ],
   "paths": {
     "/hub/2/dig_deeper": {
-      "post": {
-        "description": "Temp desc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "hub/DigDeeperRq.json"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "hub/DigDeeperRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "hub/dig_deeper.json"
     },
     "/bcweekly/3/list": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": false,
-            "explode": true,
-            "schema": {
-              "$ref": "bcweekly/WeeklyListRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "bcweekly/WeeklyListRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "bcweekly/list.json"
     },
     "/bcweekly/3/get": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "bcweekly/WeeklyGetRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "bcweekly/WeeklyGetRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "bcweekly/get.json"
     },
     "/bcsearch_public_api/1/autocomplete_elastic": {
-      "post": {
-        "description": "Temp desc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "bcsearch_public_api/AutocompleteElasticRq.json"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "bcsearch_public_api/AutocompleteElasticRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "bcsearch_public_api/autocomplete_elastic.json"
     },
     "/daily/1/daily_search": {
-      "post": {
-        "description": "Temp desc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "daily/DailySearchRq.json"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "daily/DailySearchRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "daily/daily_search.json"
     },
     "/discover/3/get_web": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "discover/GetWebRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "discover/GetWebRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "discover/get_web.json"
     },
     "/discover/3/discover_tag_arts": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "discover/DiscoverTagArtsRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "discover/DiscoverTagArtsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "discover/discover_tag_arts.json"
     },
     "/fancollection/1/collection_items": {
-      "post": {
-        "description": "Temp desc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "fancollection/FanCollectionRq.json"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "fancollection/FanItemsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "fancollection/collection_items.json"
     },
     "/fancollection/1/wishlist_items": {
-      "post": {
-        "description": "Temp desc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "fancollection/FanCollectionRq.json"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "fancollection/FanItemsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "fancollection/wishlist_items.json"
     },
     "/fancollection/1/following_bands": {
-      "post": {
-        "description": "Temp desc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "fancollection/FanCollectionRq.json"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "fancollection/FollowingBandsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "fancollection/following_bands.json"
     },
     "/fancollection/1/following_genres": {
-      "post": {
-        "description": "Temp desc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "fancollection/FanCollectionRq.json"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "fancollection/FollowingGenresRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "fancollection/following_genres.json"
     },
     "/fancollection/1/following_fans": {
-      "post": {
-        "description": "Temp desc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "fancollection/FanCollectionRq.json"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "fancollection/FansRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "fancollection/following_fans.json"
     },
     "/fancollection/1/followers": {
-      "post": {
-        "description": "Temp desc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "fancollection/FanCollectionRq.json"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "fancollection/FansRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "fancollection/followers.json"
     },
     "/fansignup/1/search_tag": {
-      "post": {
-        "description": "Temp desc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "fansignup/SearchTagRq.json"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "fansignup/SearchTagRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "fansignup/search_tag.json"
     },
     "/fuzzysearch/1/autocomplete": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "fuzzysearch/AutocompleteRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "fuzzysearch/AutocompleteRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "fuzzysearch/autocomplete.json"
     },
     "/fuzzysearch/1/app_autocomplete": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "fuzzysearch/AppAutocompleteRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "fuzzysearch/AppAutocompleteRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "fuzzysearch/app_autocomplete.json"
     },
     "/fuzzysearch/1/tag_autocomplete": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "fuzzysearch/TagAutocompleteRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "fuzzysearch/TagAutocompleteRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "fuzzysearch/tag_autocomplete.json"
     },
     "/mobile/24/band_details": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "mobile/BandDetailsRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "mobile/BandDetailsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "mobile/band_details.json"
     },
     "/mobile/24/tralbum_details": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "mobile/TralbumDetailsRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "mobile/TralbumDetailsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "mobile/tralbum_details.json"
     },
     "/mobile/24/tralbum_tags": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "mobile/TralbumDetailsRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "mobile/TralbumTagsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "mobile/tralbum_tags.json"
     },
     "/mobile/24/tralbum_lyrics": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "mobile/TralbumLyricsRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "mobile/TralbumLyricsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "mobile/tralbum_lyrics.json"
     },
     "/mobile/24/fan_bio": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "mobile/MobFanRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "mobile/MobFanBioRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "mobile/fan_bio.json"
     },
     "/mobile/24/fan_collection": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "mobile/MobFanRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "mobile/MobFanItemsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "mobile/fan_collection.json"
     },
     "/mobile/24/fan_wishlist": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "mobile/MobFanRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "mobile/MobFanItemsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "mobile/fan_wishlist.json"
     },
     "/mobile/24/fan_follows": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "mobile/MobFanRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "mobile/MobFanFollowsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "mobile/fan_follows.json"
     },
     "/mobile/24/fan_followed_by": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "mobile/MobFanRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "mobile/MobFanFollowedByRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "mobile/fan_followed_by.json"
     },
     "/mobile/24/merch_details": {
-      "get": {
-        "description": "Temp desc",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "values",
-            "description": "Temp desc",
-            "required": true,
-            "explode": true,
-            "schema": {
-              "$ref": "mobile/MerchDetailsRq.json"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "mobile/MerchDetailsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "mobile/merch_details.json"
     },
     "/mobile/24/currencies": {
-      "get": {
-        "description": "Temp desc",
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "mobile/CurrenciesRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "mobile/currencies.json"
     },
     "/tralbumcollectors/2/reviews": {
-      "post": {
-        "description": "Temp desc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "tralbumcollectors/ReviewsRq.json"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "tralbumcollectors/ReviewsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "tralbumcollectors/reviews.json"
     },
     "/tralbumcollectors/2/thumbs": {
-      "post": {
-        "description": "Temp desc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "tralbumcollectors/ThumbsRq.json"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "tralbumcollectors/ThumbsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "tralbumcollectors/thumbs.json"
     },
     "/location/1/geoname_search": {
-      "post": {
-        "description": "Temp desc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "location/GeonameSearchRq.json"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "location/GeonameSearchRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "location/geoname_search.json"
     },
     "/live_listings/1/get_shows": {
-      "post": {
-        "description": "Temp desc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "live_listings/GetShowsRq.json"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Temp desc",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "live_listings/GetShowsRs.json"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "live_listings/get_shows.json"
     }
   }
 }
