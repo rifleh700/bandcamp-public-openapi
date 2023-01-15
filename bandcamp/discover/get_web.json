@@ -1,0 +1,89 @@
+{
+  "get": {
+    "description": "Temp desc",
+    "parameters": [
+      {
+        "name": "g",
+        "in": "query",
+        "description": "Genre",
+        "required": false,
+        "example": "electronic",
+        "schema": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "t",
+        "in": "query",
+        "description": "Subgenre",
+        "required": false,
+        "example": "house",
+        "schema": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "s",
+        "in": "query",
+        "description": "Sort",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": ["top", "new", "rec"]
+        }
+      },
+      {
+        "name": "r",
+        "in": "query",
+        "description": "Recommendations",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": ["most", "latest"]
+        }
+      },
+      {
+        "name": "f",
+        "in": "query",
+        "description": "Format",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": ["all", "digital", "vinyl", "cd", "cassette"]
+        }
+      },
+      {
+        "name": "gn",
+        "in": "query",
+        "description": "ID of the location (GeoName)",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      {
+        "name": "p",
+        "in": "query",
+        "description": "Page",
+        "required": true,
+        "schema": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Temp desc",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "schema/GetWebRs.json"
+            }
+          }
+        }
+      }
+    }
+  }
+}

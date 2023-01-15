@@ -1,0 +1,39 @@
+{
+  "get": {
+    "description": "Temp desc",
+    "parameters": [
+      {
+        "name": "limit",
+        "in": "query",
+        "description": "Temp desc",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "description": "Temp desc",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Temp desc",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "schema/WeeklyListRs.json"
+            }
+          }
+        }
+      }
+    }
+  }
+}
