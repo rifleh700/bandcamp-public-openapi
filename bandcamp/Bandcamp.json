@@ -50,6 +50,9 @@
     "/fancollection/1/followers": {
       "$ref": "fancollection/followers.json"
     },
+    "/fancollection/1/search_items": {
+      "$ref": "fancollection/search_items.json"
+    },
     "/fansignup/1/search_tag": {
       "$ref": "fansignup/search_tag.json"
     },
@@ -106,6 +109,9 @@
     },
     "/live_listings/1/get_shows": {
       "$ref": "live_listings/get_shows.json"
+    },
+    "/salesfeed/1/get": {
+      "$ref": "salesfeed/get.json"
     }
   }
 }
