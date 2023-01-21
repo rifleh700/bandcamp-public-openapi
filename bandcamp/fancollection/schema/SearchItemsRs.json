@@ -1,0 +1,384 @@
+{
+  "type": "object",
+  "properties": {
+    "tralbums": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fan_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "5541"
+          },
+          "item_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "23074342"
+          },
+          "item_type": {
+            "type": "string",
+            "example": "album"
+          },
+          "band_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "1859322078"
+          },
+          "added": {
+            "type": "string",
+            "example": "06 Nov 2018 00:08:20 GMT"
+          },
+          "updated": {
+            "type": "string",
+            "example": "06 Nov 2018 00:08:20 GMT"
+          },
+          "purchased": {
+            "type": "string"
+          },
+          "sale_item_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "7071889"
+          },
+          "sale_item_type": {
+            "type": "string"
+          },
+          "tralbum_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "23074342"
+          },
+          "tralbum_type": {
+            "type": "string",
+            "example": "a"
+          },
+          "featured_track": {
+            "type": "integer",
+            "format": "int64",
+            "example": "2818562516"
+          },
+          "why": {
+            "type": "string"
+          },
+          "hidden": {
+            "type": "string"
+          },
+          "index": {
+            "type": "integer",
+            "format": "int64",
+            "example": "831"
+          },
+          "also_collected_count": {
+            "type": "integer",
+            "format": "int64",
+            "example": "1758"
+          },
+          "url_hints": {
+            "type": "object",
+            "properties": {
+              "subdomain": {
+                "type": "string",
+                "example": "rozn"
+              },
+              "custom_domain": {
+                "type": "string",
+                "example": "music.rozen.audio"
+              },
+              "custom_domain_verified": {
+                "type": "integer",
+                "format": "int64",
+                "example": "1"
+              },
+              "slug": {
+                "type": "string",
+                "example": "children-of-termina"
+              },
+              "item_type": {
+                "type": "string",
+                "example": "a"
+              }
+            }
+          },
+          "item_title": {
+            "type": "string",
+            "example": "Children of Termina"
+          },
+          "item_url": {
+            "type": "string",
+            "example": "https://music.rozen.audio/album/children-of-termina"
+          },
+          "item_art_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "876628199"
+          },
+          "item_art_url": {
+            "type": "string",
+            "example": "https://f4.bcbits.com/img/a0876628199_9.jpg"
+          },
+          "item_art": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "example": "https://f4.bcbits.com/img/a0876628199_9.jpg"
+              },
+              "thumb_url": {
+                "type": "string",
+                "example": "https://f4.bcbits.com/img/a0876628199_3.jpg"
+              },
+              "art_id": {
+                "type": "integer",
+                "format": "int64",
+                "example": "876628199"
+              }
+            }
+          },
+          "band_name": {
+            "type": "string",
+            "example": "Rozen"
+          },
+          "band_url": {
+            "type": "string",
+            "example": "https://music.rozen.audio"
+          },
+          "genre_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "24"
+          },
+          "featured_track_title": {
+            "type": "string",
+            "example": "The World That Ends in Three Days"
+          },
+          "featured_track_number": {
+            "type": "integer",
+            "format": "int64",
+            "example": "1"
+          },
+          "featured_track_is_custom": {
+            "type": "boolean"
+          },
+          "featured_track_duration": {
+            "type": "number",
+            "example": "293.387"
+          },
+          "featured_track_url": {
+            "type": "string"
+          },
+          "featured_track_encodings_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "1403810496"
+          },
+          "package_details": {
+            "type": "string"
+          },
+          "num_streamable_tracks": {
+            "type": "integer",
+            "format": "int64",
+            "example": "17"
+          },
+          "is_purchasable": {
+            "type": "boolean"
+          },
+          "is_private": {
+            "type": "boolean"
+          },
+          "is_preorder": {
+            "type": "boolean"
+          },
+          "is_giftable": {
+            "type": "boolean"
+          },
+          "is_subscriber_only": {
+            "type": "boolean"
+          },
+          "is_subscription_item": {
+            "type": "boolean"
+          },
+          "service_name": {
+            "type": "string"
+          },
+          "service_url_fragment": {
+            "type": "string"
+          },
+          "gift_sender_name": {
+            "type": "string"
+          },
+          "gift_sender_note": {
+            "type": "string"
+          },
+          "gift_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "gift_recipient_name": {
+            "type": "string"
+          },
+          "album_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "23074342"
+          },
+          "album_title": {
+            "type": "string",
+            "example": "Children of Termina"
+          },
+          "listen_in_app_url": {
+            "type": "string"
+          },
+          "band_location": {
+            "type": "string"
+          },
+          "band_image_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "release_count": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "message_count": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "is_set_price": {
+            "type": "boolean"
+          },
+          "price": {
+            "type": "number"
+          },
+          "has_digital_download": {
+            "type": "boolean"
+          },
+          "merch_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64",
+              "example": "2770173404"
+            }
+          },
+          "merch_sold_out": {
+            "type": "boolean"
+          },
+          "currency": {
+            "type": "string",
+            "example": "USD"
+          },
+          "label": {
+            "type": "string",
+            "example": "Materia Collective"
+          },
+          "label_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": "3683409508"
+          },
+          "require_email": {
+            "type": "boolean"
+          },
+          "item_art_ids": {
+            "type": "string"
+          },
+          "releases": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "discount": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string",
+            "example": "1541462900:23074342:a::"
+          },
+          "variant_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "merch_snapshot": {
+            "type": "string"
+          },
+          "featured_track_license_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "licensed_item": {
+            "type": "string"
+          },
+          "download_available": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "gifts": {
+      "type": "array",
+      "items": {
+      }
+    },
+    "tracklists": {
+      "type": "object",
+      "properties": {
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int64",
+                "example": "2818562516"
+              },
+              "title": {
+                "type": "string",
+                "example": "The World That Ends in Three Days"
+              },
+              "artist": {
+                "type": "string",
+                "example": "Rozen"
+              },
+              "track_number": {
+                "type": "integer",
+                "format": "int64",
+                "example": "1"
+              },
+              "duration": {
+                "type": "number",
+                "example": "293.387"
+              },
+              "file": {
+                "type": "object",
+                "properties": {
+                  "mp3-128": {
+                    "type": "string",
+                    "example": "https://bandcamp.com/stream_redirect?enc=mp3-128&track_id=2818562516&ts=1674306483&t=d30726d7e1b5a67d1e427dfa94f855e01a0225c6"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "redownload_urls": {
+      "type": "object",
+      "properties": {}
+    },
+    "similar_gift_ids": {
+      "type": "array",
+      "items": {
+      }
+    },
+    "item_lookup": {
+      "type": "object",
+      "properties": {}
+    },
+    "search_key": {
+      "type": "string",
+      "example": "t"
+    }
+  }
+}

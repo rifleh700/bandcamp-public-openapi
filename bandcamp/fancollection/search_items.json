@@ -1,0 +1,27 @@
+{
+  "post": {
+    "description": "Temp desc",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "schema/SearchItemsRq.json"
+          }
+        }
+      },
+      "required": true
+    },
+    "responses": {
+      "200": {
+        "description": "Temp desc",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "schema/SearchItemsRs.json"
+            }
+          }
+        }
+      }
+    }
+  }
+}

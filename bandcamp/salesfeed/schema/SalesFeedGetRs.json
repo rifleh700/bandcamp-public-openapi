@@ -1,0 +1,125 @@
+{
+  "type": "object",
+  "properties": {
+    "start_date": {
+      "type": "integer",
+      "format": "int64",
+      "example": "1674304920"
+    },
+    "end_date": {
+      "type": "integer",
+      "format": "int64",
+      "example": "1674305520"
+    },
+    "data_delay_sec": {
+      "type": "integer",
+      "format": "int64",
+      "example": "120"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "event_type": {
+            "type": "string",
+            "example": "sale"
+          },
+          "utc_date": {
+            "type": "number",
+            "example": "1674304922.0247"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "utc_date": {
+                  "type": "number",
+                  "example": "1674304922.1518283"
+                },
+                "artist_name": {
+                  "type": "string",
+                  "example": "Eden Burns"
+                },
+                "item_type": {
+                  "type": "string",
+                  "example": "a"
+                },
+                "item_description": {
+                  "type": "string",
+                  "example": "Tubbs & Burns"
+                },
+                "album_title": {
+                  "type": "string"
+                },
+                "slug_type": {
+                  "type": "string",
+                  "example": "a",
+                  "enum": ["a", "t", "p"]
+                },
+                "track_album_slug_text": {
+                  "type": "string"
+                },
+                "currency": {
+                  "type": "string",
+                  "example": "EUR"
+                },
+                "amount_paid": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "7"
+                },
+                "item_price": {
+                  "type": "number"
+                },
+                "amount_paid_usd": {
+                  "type": "number",
+                  "example": "7.61"
+                },
+                "country": {
+                  "type": "string",
+                  "example": "Ireland"
+                },
+                "art_id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "3177672873"
+                },
+                "releases": {
+                  "type": "integer",
+                  "format": "int64"
+                },
+                "package_image_id": {
+                  "type": "integer",
+                  "format": "int64"
+                },
+                "url": {
+                  "type": "string",
+                  "example": "//edenburns.bandcamp.com/album/tubbs-burns"
+                },
+                "country_code": {
+                  "type": "string",
+                  "example": "ie"
+                },
+                "amount_paid_fmt": {
+                  "type": "string",
+                  "example": "€7"
+                },
+                "art_url": {
+                  "type": "string",
+                  "example": "https://f4.bcbits.com/img/a3177672873_7.jpg"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "server_time": {
+      "type": "integer",
+      "format": "int64",
+      "example": "1674305529"
+    }
+  }
+}

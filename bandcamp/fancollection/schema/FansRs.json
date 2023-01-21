@@ -12,12 +12,11 @@
             "example": "1954345"
           },
           "band_id": {
-            "type": "string",
-            "format": "nullable"
+            "type": "integer",
+            "format": "int64"
           },
           "fan_url": {
-            "type": "string",
-            "format": "nullable"
+            "type": "string"
           },
           "image_id": {
             "type": "integer",
@@ -36,8 +35,7 @@
             "type": "boolean"
           },
           "location": {
-            "type": "string",
-            "format": "nullable"
+            "type": "string"
           },
           "date_followed": {
             "type": "string",

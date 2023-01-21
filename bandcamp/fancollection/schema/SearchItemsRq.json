@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "fan_id": {
+      "type": "integer",
+      "format": "int64",
+      "example": "1810501"
+    },
+    "search_key": {
+      "type": "string"
+    },
+    "search_type": {
+      "type": "string",
+      "enum": ["collection", "wishlist"]
+    }
+  },
+  "required": [
+    "fan_id",
+    "search_key",
+    "search_type"
+  ]
+}
