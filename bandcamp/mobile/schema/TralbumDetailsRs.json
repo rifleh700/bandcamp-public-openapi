@@ -232,7 +232,21 @@
             "format": "int64"
           },
           "geoname": {
-            "type": "string"
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "4155751"
+              },
+              "name": {
+                "type": "string",
+                "example": "Florida"
+              },
+              "fullname": {
+                "type": "string",
+                "example": "Florida, United States"
+              }
+            }
           }
         }
       }

@@ -65,7 +65,9 @@
             "type": "string"
           },
           "custom_domain_verified": {
-            "type": "boolean"
+            "type": "integer",
+            "format": "int64",
+            "example": "1"
           },
           "genre_id": {
             "type": "integer",
@@ -116,7 +118,8 @@
                   }
                 },
                 "is_set_price": {
-                  "type": "boolean"
+                  "type": "integer",
+                  "format": "int64"
                 },
                 "currency": {
                   "type": "string",
