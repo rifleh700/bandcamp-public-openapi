@@ -133,9 +133,7 @@
             "type": "boolean"
           },
           "price": {
-            "type": "integer",
-            "format": "int64",
-            "example": "1"
+            "type": "number"
           },
           "has_digital_download": {
             "type": "boolean"
@@ -259,9 +257,7 @@
       "type": "boolean"
     },
     "price": {
-      "type": "integer",
-      "format": "int64",
-      "example": "10"
+      "type": "number"
     },
     "require_email": {
       "type": "boolean"
