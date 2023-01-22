@@ -320,41 +320,39 @@
     },
     "tracklists": {
       "type": "object",
-      "properties": {
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "type:": "object",
-            "properties": {
-              "id": {
-                "type": "integer",
-                "format": "int64",
-                "example": "3101234543"
-              },
-              "title": {
-                "type": "string",
-                "example": "RobertaFlack (Other Mix)"
-              },
-              "artist": {
-                "type": "string",
-                "example": "Flying Lotus"
-              },
-              "track_number": {
-                "type": "integer",
-                "format": "int64",
-                "example": "5"
-              },
-              "duration": {
-                "type": "number",
-                "example": "184.587"
-              },
-              "file": {
-                "type": "object",
-                "properties": {
-                  "mp3-128": {
-                    "type": "string",
-                    "example": "https://bandcamp.com/stream_redirect?enc=mp3-128&track_id=3101234543&ts=1673011423&t=5f77d04662e2a9556d511efcc64bda57a33c7e5b"
-                  }
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type:": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int64",
+              "example": "3101234543"
+            },
+            "title": {
+              "type": "string",
+              "example": "RobertaFlack (Other Mix)"
+            },
+            "artist": {
+              "type": "string",
+              "example": "Flying Lotus"
+            },
+            "track_number": {
+              "type": "integer",
+              "format": "int64",
+              "example": "5"
+            },
+            "duration": {
+              "type": "number",
+              "example": "184.587"
+            },
+            "file": {
+              "type": "object",
+              "properties": {
+                "mp3-128": {
+                  "type": "string",
+                  "example": "https://bandcamp.com/stream_redirect?enc=mp3-128&track_id=3101234543&ts=1673011423&t=5f77d04662e2a9556d511efcc64bda57a33c7e5b"
                 }
               }
             }

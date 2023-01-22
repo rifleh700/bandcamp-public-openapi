@@ -88,7 +88,8 @@
             "example": "2017668235"
           },
           "is_preorder": {
-            "type": "boolean"
+            "type": "number",
+            "format": "int32"
           },
           "packages": {
             "type": "array",

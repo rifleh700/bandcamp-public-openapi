@@ -3,10 +3,8 @@
   "properties": {
     "lyrics": {
       "type": "object",
-      "properties": {
-        "additionalProperties": {
-          "type": "string"
-        }
+      "additionalProperties": {
+        "type": "string"
       }
     }
   }
