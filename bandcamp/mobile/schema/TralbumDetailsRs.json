@@ -273,21 +273,19 @@
     },
     "package_details_lite": {
       "type": "object",
-      "properties": {
-        "additionalProperties": {
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": "string",
-              "example": "virtua galaxy® Vinyl"
-            },
-            "image_ids": {
-              "type": "array",
-              "items": {
-                "type": "integer",
-                "format": "int64",
-                "example": "28044313"
-              }
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "virtua galaxy® Vinyl"
+          },
+          "image_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64",
+              "example": "28044313"
             }
           }
         }

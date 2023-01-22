@@ -453,65 +453,63 @@
     },
     "collected_by": {
       "type": "object",
-      "properties": {
-        "additionalProperties": {
-          "type": "object",
-          "properties": {
-            "reviews": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "fan_id": {
-                    "type": "integer",
-                    "format": "int64",
-                    "example": "2880101"
-                  },
-                  "name": {
-                    "type": "string",
-                    "example": "jonser"
-                  },
-                  "image_id": {
-                    "type": "integer",
-                    "format": "int64",
-                    "example": "30067700"
-                  },
-                  "why": {
-                    "type": "string",
-                    "example": "wow.its hard to put into words just how incredibly special and needed this album is for me .thank you omori . sincerely... thank you."
-                  },
-                  "fav_track_title": {
-                    "type": "string",
-                    "example": "How...sad!"
-                  }
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "reviews": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "fan_id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "2880101"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "jonser"
+                },
+                "image_id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "30067700"
+                },
+                "why": {
+                  "type": "string",
+                  "example": "wow.its hard to put into words just how incredibly special and needed this album is for me .thank you omori . sincerely... thank you."
+                },
+                "fav_track_title": {
+                  "type": "string",
+                  "example": "How...sad!"
                 }
               }
-            },
-            "thumbs": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "fan_id": {
-                    "type": "integer",
-                    "format": "int64",
-                    "example": "5666250"
-                  },
-                  "name": {
-                    "type": "string",
-                    "example": "Burger_Knight II"
-                  },
-                  "image_id": {
-                    "type": "integer",
-                    "format": "int64",
-                    "example": "23647273"
-                  },
-                  "why": {
-                    "type": "string"
-                  },
-                  "fav_track_title": {
-                    "type": "string"
-                  }
+            }
+          },
+          "thumbs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "fan_id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "5666250"
+                },
+                "name": {
+                  "type": "string",
+                  "example": "Burger_Knight II"
+                },
+                "image_id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "23647273"
+                },
+                "why": {
+                  "type": "string"
+                },
+                "fav_track_title": {
+                  "type": "string"
                 }
               }
             }

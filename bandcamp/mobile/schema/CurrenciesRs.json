@@ -30,101 +30,95 @@
     },
     "info": {
       "type": "object",
-      "properties": {
-        "additionalProperties": {
-          "type": "object",
-          "properties": {
-            "symbol": {
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "example": "USD"
+          },
+          "long": {
+            "type": "string",
+            "example": "US Dollar"
+          },
+          "plural": {
+            "type": "string",
+            "example": "US Dollars"
+          },
+          "prefix_utf8": {
+            "type": "string",
+            "example": "$"
+          },
+          "prefix": {
+            "type": "string",
+            "example": "$"
+          },
+          "prefix_informal_utf8": {
+            "type": "string",
+            "example": "$"
+          },
+          "prefix_informal": {
+            "type": "string",
+            "example": "$"
+          },
+          "suffix_informal": {
+            "type": "string",
+            "example": ""
+          },
+          "places": {
+            "type": "integer",
+            "format": "int64",
+            "example": "2"
+          },
+          "a_dollar": {
+            "type": "integer",
+            "format": "int64",
+            "example": "1"
+          },
+          "small_min_price": {
+            "type": "number",
+            "example": "0.5"
+          },
+          "medium_min_price": {
+            "type": "integer",
+            "format": "int64",
+            "example": "1"
+          },
+          "fixed_rate": {
+            "type": "integer",
+            "format": "int64",
+            "example": "1"
+          },
+          "slang": {
+            "type": "array",
+            "items": {
               "type": "string",
-              "example": "USD"
-            },
-            "long": {
-              "type": "string",
-              "example": "US Dollar"
-            },
-            "plural": {
-              "type": "string",
-              "example": "US Dollars"
-            },
-            "prefix_utf8": {
-              "type": "string",
-              "example": "$"
-            },
-            "prefix": {
-              "type": "string",
-              "example": "$"
-            },
-            "prefix_informal_utf8": {
-              "type": "string",
-              "example": "$"
-            },
-            "prefix_informal": {
-              "type": "string",
-              "example": "$"
-            },
-            "suffix_informal": {
-              "type": "string",
-              "example": ""
-            },
-            "places": {
-              "type": "integer",
-              "format": "int64",
-              "example": "2"
-            },
-            "a_dollar": {
-              "type": "integer",
-              "format": "int64",
-              "example": "1"
-            },
-            "small_min_price": {
-              "type": "number",
-              "example": "0.5"
-            },
-            "medium_min_price": {
-              "type": "integer",
-              "format": "int64",
-              "example": "1"
-            },
-            "fixed_rate": {
-              "type": "integer",
-              "format": "int64",
-              "example": "1"
-            },
-            "slang": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "example": "bucks"
-              }
-            },
-            "paypal": {
-              "type": "boolean"
-            },
-            "payflow": {
-              "type": "boolean"
+              "example": "bucks"
             }
+          },
+          "paypal": {
+            "type": "boolean"
+          },
+          "payflow": {
+            "type": "boolean"
           }
         }
       }
     },
     "rates": {
       "type": "object",
-      "properties": {
-        "additionalProperties": {
-          "type": "integer",
-          "format": "int64",
-          "example": "1"
-        }
+      "additionalProperties": {
+        "type": "integer",
+        "format": "int64",
+        "example": "1"
       }
     },
     "digital_vat_rates": {
       "type": "object",
-      "properties": {
-        "additionalProperties": {
-          "type": "integer",
-          "format": "int64",
-          "example": "20"
-        }
+      "additionalProperties": {
+        "type": "integer",
+        "format": "int64",
+        "example": "20"
       }
     }
   }
