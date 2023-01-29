@@ -71,18 +71,16 @@
             "example": "2"
           },
           "a_dollar": {
-            "type": "integer",
-            "format": "int64",
-            "example": "1"
+            "type": "number",
+            "example": "1.0"
           },
           "small_min_price": {
             "type": "number",
             "example": "0.5"
           },
           "medium_min_price": {
-            "type": "integer",
-            "format": "int64",
-            "example": "1"
+            "type": "number",
+            "example": "0.5"
           },
           "fixed_rate": {
             "type": "integer",
@@ -108,17 +106,15 @@
     "rates": {
       "type": "object",
       "additionalProperties": {
-        "type": "integer",
-        "format": "int64",
-        "example": "1"
+        "type": "number",
+        "example": "0.5"
       }
     },
     "digital_vat_rates": {
       "type": "object",
       "additionalProperties": {
-        "type": "integer",
-        "format": "int64",
-        "example": "20"
+        "type": "number",
+        "example": "0.5"
       }
     }
   }

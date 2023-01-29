@@ -3,7 +3,7 @@
   "properties": {
     "tralbum_type": {
       "type": "string",
-      "example": "a"
+      "enum": ["a", "t"]
     },
     "tralbum_id": {
       "type": "integer",
@@ -16,8 +16,7 @@
     },
     "count": {
       "type": "integer",
-      "format": "int64",
-      "example": "7"
+      "format": "int32"
     },
     "exclude_fan_ids": {
       "type": "array",
@@ -26,5 +25,9 @@
         "format": "int64"
       }
     }
-  }
+  },
+  "required": [
+    "tralbum_id",
+    "tralbum_type"
+  ]
 }

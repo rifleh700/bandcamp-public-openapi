@@ -27,6 +27,7 @@
           },
           "utc_date": {
             "type": "number",
+            "format": "float",
             "example": "1674304922.0247"
           },
           "items": {
@@ -36,6 +37,7 @@
               "properties": {
                 "utc_date": {
                   "type": "number",
+                  "format": "float",
                   "example": "1674304922.1518283"
                 },
                 "artist_name": {
@@ -66,9 +68,7 @@
                   "example": "EUR"
                 },
                 "amount_paid": {
-                  "type": "integer",
-                  "format": "int64",
-                  "example": "7"
+                  "type": "number"
                 },
                 "item_price": {
                   "type": "number"
@@ -105,6 +105,17 @@
                 "amount_paid_fmt": {
                   "type": "string",
                   "example": "€7"
+                },
+                "amount_over_fmt": {
+                  "type": "string",
+                  "example": "€7"
+                },
+                "addl_count": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "item_slug": {
+                  "type": "string"
                 },
                 "art_url": {
                   "type": "string",
