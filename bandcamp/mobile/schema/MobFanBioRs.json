@@ -34,7 +34,8 @@
       "example": "27450371"
     },
     "is_montage_image": {
-      "type": "boolean"
+      "type": "integer",
+      "format": "int32"
     },
     "bio": {
       "type": "string",

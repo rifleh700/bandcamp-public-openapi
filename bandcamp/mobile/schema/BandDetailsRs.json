@@ -220,7 +220,21 @@
             }
           },
           "album_art": {
-            "type": "string"
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "url": {
+                "type": "string",
+                "example": "https://f4.bcbits.com/img/a2565257935_2.jpg"
+              },
+              "https_url": {
+                "type": "string",
+                "example": "https://f4.bcbits.com/img/a2565257935_2.jpg"
+              }
+            }
           },
           "download_type": {
             "type": "string",

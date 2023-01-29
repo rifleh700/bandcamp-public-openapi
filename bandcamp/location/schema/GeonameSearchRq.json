@@ -7,7 +7,7 @@
     },
     "n": {
       "type": "integer",
-      "format": "int64",
+      "format": "int32",
       "example": "5"
     },
     "geocoder_fallback": {

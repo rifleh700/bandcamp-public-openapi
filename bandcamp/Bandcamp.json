@@ -3,7 +3,7 @@
   "info": {
     "title": "Public Bandcamp API - OpenAPI 3.0",
     "description": "This is list of scrambled Bandcamp public endpoints. Tokens aren't required.",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "servers": [
     {

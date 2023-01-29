@@ -114,6 +114,7 @@
     },
     "audio_duration": {
       "type": "number",
+      "format": "float",
       "example": "4622.81"
     },
     "button_color": {
@@ -229,9 +230,7 @@
             "type": "boolean"
           },
           "price": {
-            "type": "integer",
-            "format": "int64",
-            "example": "10"
+            "type": "number"
           },
           "is_purchasable": {
             "type": "boolean"

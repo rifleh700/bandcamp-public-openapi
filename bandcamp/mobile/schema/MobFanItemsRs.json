@@ -35,7 +35,7 @@
           },
           "duration": {
             "type": "number",
-            "example": "274.074"
+            "format": "float"
           },
           "encodings_id": {
             "type": "integer",
@@ -70,9 +70,7 @@
             "type": "boolean"
           },
           "price": {
-            "type": "integer",
-            "format": "int64",
-            "example": "1"
+            "type": "number"
           },
           "has_digital_download": {
             "type": "boolean"
@@ -274,6 +272,7 @@
           },
           "featured_track_duration": {
             "type": "number",
+            "format": "float",
             "example": "274.074"
           },
           "featured_track_url": {
@@ -286,7 +285,88 @@
             "example": "2555611395"
           },
           "package_details": {
-            "type": "string"
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "private": {
+                "type": "boolean"
+              },
+              "killed": {
+                "type": "boolean"
+              },
+              "band_id": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "label_id": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "is_subscriber_only": {
+                "type": "boolean"
+              },
+              "is_live_event": {
+                "type": "boolean"
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "image_id": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "width": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "height": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  }
+                }
+              },
+              "band_name": {
+                "type": "string"
+              },
+              "url_hints": {
+                "type": "object",
+                "properties": {
+                  "subdomain": {
+                    "type": "string"
+                  },
+                  "custom_domain": {
+                    "type": "string"
+                  },
+                  "custom_domain_verified": {
+                    "type": "boolean"
+                  },
+                  "slug": {
+                    "type": "string",
+                    "example": "/album/lotus-deluxe"
+                  },
+                  "item_type": {
+                    "type": "string",
+                    "enum": [
+                      "p",
+                      "a",
+                      "t"
+                    ]
+                  }
+                }
+              },
+              "item_url": {
+                "type": "string",
+                "example": "https://lannds.bandcamp.com/album/lotus-deluxe"
+              }
+            }
           },
           "num_streamable_tracks": {
             "type": "integer",
@@ -362,9 +442,7 @@
             "type": "boolean"
           },
           "price": {
-            "type": "integer",
-            "format": "int64",
-            "example": "1"
+            "type": "number"
           },
           "has_digital_download": {
             "type": "boolean"
@@ -413,7 +491,25 @@
             "format": "int64"
           },
           "merch_snapshot": {
-            "type": "string"
+            "type": "object",
+            "properties": {
+              "package_type_id": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "merch_art_0": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "merch_art_1": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "merch_art_2": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
           },
           "featured_track_license_id": {
             "type": "integer",
@@ -444,6 +540,23 @@
                 "loc_id": {
                   "type": "integer",
                   "format": "int64"
+                },
+                "geoname": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Québec"
+                    },
+                    "fullname": {
+                      "type": "string",
+                      "example": "Québec, Quebec"
+                    }
+                  }
                 }
               }
             }

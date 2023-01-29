@@ -11,7 +11,7 @@
             "properties": {
               "type": {
                 "type": "string",
-                "example": "b"
+                "enum": ["b", "a", "t", "f"]
               },
               "id": {
                 "type": "integer",
@@ -31,9 +31,29 @@
                 "type": "string",
                 "example": "Vaporwave Tapes Brasil"
               },
+              "username": {
+                "type": "string"
+              },
+              "band_id": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "band_name": {
+                "type": "string"
+              },
+              "album_name": {
+                "type": "string"
+              },
               "item_url_root": {
                 "type": "string",
                 "example": "https://vwtbr.bandcamp.com"
+              },
+              "item_url_path": {
+                "type": "string"
+              },
+              "collection_size": {
+                "type": "integer",
+                "format": "int64"
               },
               "location": {
                 "type": "string",
@@ -52,6 +72,14 @@
               "img": {
                 "type": "string",
                 "example": "https://f4.bcbits.com/img/0017620204_23.jpg"
+              },
+              "image_id": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "album_id": {
+                "type": "integer",
+                "format": "int64"
               },
               "genre_name": {
                 "type": "string",
@@ -95,7 +123,7 @@
               },
               "count": {
                 "type": "integer",
-                "format": "int64",
+                "format": "int32",
                 "example": "65150"
               },
               "norm_name": {
@@ -111,12 +139,12 @@
         },
         "count": {
           "type": "integer",
-          "format": "int64",
+          "format": "int32",
           "example": "1"
         },
         "time_ms": {
           "type": "integer",
-          "format": "int64",
+          "format": "int32",
           "example": "1"
         }
       }

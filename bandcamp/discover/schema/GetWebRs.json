@@ -23,9 +23,9 @@
             "type": "string"
           },
           "score": {
-            "type": "integer",
-            "format": "int64",
-            "example": "0"
+            "type": "number",
+            "format": "float",
+            "example": "0.0"
           },
           "band_id": {
             "type": "integer",
@@ -37,7 +37,8 @@
             "example": "a817797480solr_hack"
           },
           "is_preorder": {
-            "type": "boolean"
+            "type": "integer",
+            "format": "int32"
           },
           "publish_date": {
             "type": "string",
@@ -103,9 +104,8 @@
                 }
               },
               "duration": {
-                "type": "integer",
-                "format": "int64",
-                "example": "61"
+                "type": "number",
+                "format": "float"
               },
               "id": {
                 "type": "integer",
@@ -163,7 +163,36 @@
             "type": "string"
           },
           "recommendations": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "rec_band_name": {
+                  "type": "string"
+                },
+                "rec_why": {
+                  "type": "string"
+                },
+                "rec_date": {
+                  "type": "string",
+                  "example": "10 Aug 2021 06:23:44 GMT"
+                },
+                "rec_band_url_hash": {
+                  "type": "object",
+                  "properties": {
+                    "subdomain": {
+                      "type": "string"
+                    },
+                    "custom_domain": {
+                      "type": "string"
+                    },
+                    "rec_band_custom_domain_verified": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           },
           "license_id": {
             "type": "string"

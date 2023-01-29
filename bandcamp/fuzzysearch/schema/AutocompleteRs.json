@@ -36,6 +36,16 @@
                 "type": "string",
                 "example": "100% ELECTRONICA"
               },
+              "username": {
+                "type": "string"
+              },
+              "band_id": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "band_name": {
+                "type": "string"
+              },
               "url": {
                 "type": "string",
                 "example": "https://100pelectronica.bandcamp.com"
@@ -46,6 +56,10 @@
               "img": {
                 "type": "string",
                 "example": "https://f4.bcbits.com/img/0015863258_23.jpg"
+              },
+              "image_id": {
+                "type": "integer",
+                "format": "int64"
               },
               "stat_params": {
                 "type": "string",

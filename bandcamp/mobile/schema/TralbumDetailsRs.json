@@ -100,7 +100,7 @@
           },
           "duration": {
             "type": "number",
-            "example": "68.1702"
+            "format": "float"
           },
           "encodings_id": {
             "type": "integer",
