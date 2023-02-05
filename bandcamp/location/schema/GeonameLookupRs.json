@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "ok": {
+      "type": "boolean"
+    },
+    "result": {
+      "type": "string",
+      "example": "Florida"
+    }
+  }
+}
