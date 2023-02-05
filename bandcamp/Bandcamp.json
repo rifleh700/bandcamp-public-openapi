@@ -3,7 +3,7 @@
   "info": {
     "title": "Public Bandcamp API - OpenAPI 3.0",
     "description": "This is list of scrambled Bandcamp public endpoints. Tokens aren't required.",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "servers": [
     {
@@ -109,6 +109,9 @@
     },
     "/location/1/geoname_search": {
       "$ref": "location/geoname_search.json"
+    },
+    "/location/1/geoname_lookup": {
+      "$ref": "location/geoname_lookup.json"
     },
     "/live_listings/1/get_shows": {
       "$ref": "live_listings/get_shows.json"
