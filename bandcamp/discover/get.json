@@ -26,7 +26,7 @@
         "name": "s",
         "in": "query",
         "description": "Sort",
-        "required": true,
+        "required": false,
         "schema": {
           "type": "string",
           "enum": ["top", "new", "rec"]
@@ -66,7 +66,7 @@
         "name": "p",
         "in": "query",
         "description": "Page",
-        "required": true,
+        "required": false,
         "schema": {
           "type": "integer",
           "format": "int32"
