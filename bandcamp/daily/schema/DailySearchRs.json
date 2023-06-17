@@ -75,7 +75,7 @@
     },
     "page": {
       "type": "integer",
-      "format": "int64",
+      "format": "int32",
       "example": "1"
     },
     "per_page": {
