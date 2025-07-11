@@ -86,6 +86,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/ac_elastic_rs'
 
+  /bcsearch_public_api/1/tag_search:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/prefix_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/found_tag'
+
   /daily/1/daily_search:
     post:
       description: Temp desc
@@ -252,6 +271,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/discover_tag_arts_rs'
+
+  # new discover instead of 'dig_deeper'
+  /discover/1/discover_web:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/discover_web_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/discover_web_rs'
+
 
   /fancollection/1/collection_items:
     post:
@@ -915,6 +953,18 @@ components:
           type: integer
           format: int32
 
+    price:
+      type: object
+      properties:
+        amount:
+          type: number
+          example: '950'
+        currency:
+          type: string
+          example: USD
+        is_money:
+          type: boolean
+
     package:
       type: object
       properties:
@@ -923,17 +973,7 @@ components:
           format: int64
           example: '1330962887'
         price:
-          type: object
-          properties:
-            amount:
-              type: integer
-              format: int64
-              example: '950'
-            currency:
-              type: string
-              example: USD
-            is_money:
-              type: boolean
+          $ref: '#/components/schemas/price'
         is_set_price:
           type: integer
           format: int64
@@ -1289,6 +1329,12 @@ components:
           type: integer
           format: int64
 
+    prefix_rq:
+      type: object
+      properties:
+        prefix:
+          type: string
+
     # almost same as fuzzysearch_item
     ac_elastic_item:
       type: object
@@ -1609,6 +1655,7 @@ components:
         recommendations:
           type: array
           items:
+            #TODO
             type: object
             properties:
               rec_band_name:
@@ -1716,6 +1763,167 @@ components:
           format: int64
         geoname:
           $ref: '#/components/schemas/geoname'
+
+    discover_web_rq:
+      type: object
+      properties:
+        category_id:
+          type: integer
+          format: int32
+        tag_norm_names:
+          type: array
+          items:
+            type: string
+        geoname_id:
+          type: integer
+          format: int64
+        slice:
+          type: string
+        time_facet_id:
+          type: integer
+          format: int64
+        cursor:
+          type: string
+        size:
+          type: integer
+          format: int32
+        include_result_types:
+          type: array
+          items:
+            #TODO
+            type: string
+            enum:
+              - a
+              - s
+
+    discover_package_item:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        format:
+          type: string
+        is_digital_included:
+          type: boolean
+        is_set_price:
+          type: boolean
+        is_preorder:
+          type: boolean
+        image_id:
+          type: integer
+          format: int32
+        price:
+          $ref: '#/components/schemas/price'
+        type_id:
+          type: integer
+          format: int32
+
+    discover_web_item:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        is_album_preorder:
+          type: boolean
+        is_free_download:
+          type: boolean
+        is_purchasable:
+          type: boolean
+        is_set_price:
+          type: boolean
+        item_url:
+          type: string
+        item_price:
+          type: number
+        price:
+          $ref: '#/components/schemas/price'
+        item_currency:
+          type: string
+        item_image_id:
+          type: integer
+          format: int64
+        result_type:
+          #TODO: enum
+          type: string
+        band_id:
+          type: integer
+          format: int64
+        album_artist:
+          type: string
+        band_name:
+          type: string
+        band_url:
+          type: string
+        band_bio_image_id:
+          type: integer
+          format: int64
+        band_latest_art_id:
+          type: integer
+          format: int64
+        band_genre_id:
+          type: integer
+          format: int64
+        release_date:
+          type: string
+        total_package_count:
+          type: integer
+          format: int32
+        package_info:
+          type: array
+          items:
+            $ref: '#/components/schemas/discover_package_item'
+        featured_track:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            title:
+              type: string
+            band_name:
+              type: string
+            band_id:
+              type: integer
+              format: int64
+            duration:
+              type: number
+              format: float
+            stream_url:
+              type: string
+        band_location:
+          type: string
+        track_count:
+          type: integer
+          format: int32
+        item_duration:
+          type: number
+          format: float
+        item_tags:
+          #TODO
+          type: string
+
+
+    discover_web_rs:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/discover_web_item'
+        result_count:
+          type: integer
+          format: int32
+        batch_result_count:
+          type: integer
+          format: int32
+        cursor:
+          type: string
 
     fan_collection_rq:
       type: object
@@ -3646,17 +3854,7 @@ components:
           type: string
           example: 'https://bremaa.bandcamp.com/merch/the-love-restoration-experience-5'
         price:
-          type: object
-          properties:
-            amount:
-              type: integer
-              format: int64
-              example: '200'
-            currency:
-              type: string
-              example: USD
-            is_money:
-              type: boolean
+          $ref: '#/components/schemas/price'
         scheduled_start_date:
           type: string
           example: '22 Jan 2023 23:00:00 GMT'
