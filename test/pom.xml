@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.rifleh700</groupId>
+    <artifactId>bandcamp-public-openapi-test</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <!-- General -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+
+        <!-- OpenAPI generator -->
+        <bandcamp.model.package>io.rifleh700.bpot.api.model</bandcamp.model.package>
+        <bandcamp.api.package>io.rifleh700.bpot.api</bandcamp.api.package>
+
+        <!-- Plugin -->
+        <openapi-generator-maven-plugin.version>7.14.0</openapi-generator-maven-plugin.version>
+        <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
+
+        <!-- JSR implementation -->
+        <resteasy.version>6.2.12.Final</resteasy.version>
+
+        <!-- Logging -->
+        <slf4j.version>1.7.36</slf4j.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-client</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-json-p-provider</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-json-binding-provider</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.17.0</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <!-- Test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!-- Move resources and build running script -->
+        <resources>
+            <resource>
+                <directory>src/test/resources</directory>
+                <includes>
+                    <include>/**</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <!-- Generate Bandcamp model and API -->
+        <plugins>
+            <plugin>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <version>${openapi-generator-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>openapi-generate-model</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <generatorName>java-microprofile</generatorName>
+                            <inputSpec>${project.basedir}/../bandcamp-public.yaml</inputSpec>
+                            <output>${project.build.directory}/generated-sources/bandcamp</output>
+                            <apiPackage>${bandcamp.api.package}</apiPackage>
+                            <modelPackage>${bandcamp.model.package}</modelPackage>
+
+                            <generateApis>false</generateApis>
+                            <generateModels>true</generateModels>
+                            <generateApiDocumentation>false</generateApiDocumentation>
+                            <generateApiTests>false</generateApiTests>
+                            <generateModelDocumentation>false</generateModelDocumentation>
+                            <generateModelTests>false</generateModelTests>
+                            <generateSupportingFiles>false</generateSupportingFiles>
+
+                            <configOptions>
+                                <sourceFolder>/</sourceFolder>
+                                <library>microprofile</library>
+                                <dateLibrary>java8</dateLibrary>
+                                <serializationLibrary>jsonb</serializationLibrary>
+                                <annotationLibrary>none</annotationLibrary>
+                                <useBeanValidation>false</useBeanValidation>
+                                <useJakartaEe>true</useJakartaEe>
+                            </configOptions>
+                            <additionalProperties>rootJavaEEPackage=jakarta</additionalProperties>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>openapi-generate-api</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <generatorName>jaxrs-spec</generatorName>
+                            <inputSpec>${project.basedir}/../bandcamp-public.yaml</inputSpec>
+                            <output>${project.build.directory}/generated-sources/bandcamp</output>
+                            <apiPackage>${bandcamp.api.package}</apiPackage>
+                            <modelPackage>${bandcamp.model.package}</modelPackage>
+
+                            <generateApis>true</generateApis>
+                            <generateModels>false</generateModels>
+                            <generateApiDocumentation>false</generateApiDocumentation>
+                            <generateApiTests>false</generateApiTests>
+                            <generateModelDocumentation>false</generateModelDocumentation>
+                            <generateModelTests>false</generateModelTests>
+                            <generateSupportingFiles>false</generateSupportingFiles>
+
+                            <configOptions>
+                                <sourceFolder>/</sourceFolder>
+                                <interfaceOnly>true</interfaceOnly>
+                                <dateLibrary>java8</dateLibrary>
+                                <useBeanValidation>false</useBeanValidation>
+                                <useSwaggerAnnotations>false</useSwaggerAnnotations>
+                                <hideGenerationTimestamp>true</hideGenerationTimestamp>
+                                <useJakartaEe>true</useJakartaEe>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

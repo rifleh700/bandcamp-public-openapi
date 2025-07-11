@@ -1,0 +1,3800 @@
+openapi: 3.0.3
+info:
+  title: Public Bandcamp API - OpenAPI 3.0
+  description: This is list of scrambled Bandcamp public endpoints. Tokens aren't required.
+  version: 2.0.0
+servers:
+  - url: https://bandcamp.com/api
+paths:
+
+  /hub/2/dig_deeper:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/dig_deeper_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dig_deeper_rs'
+
+  /bcweekly/3/list:
+    get:
+      description: Temp desc
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+        - name: offset
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/bcweekly_list_item'
+
+  /bcweekly/3/get:
+    get:
+      description: Temp desc
+      parameters:
+        - name: id
+          in: query
+          description: Temp desc
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/bcweekly_get_item'
+
+  /bcsearch_public_api/1/autocomplete_elastic:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ac_elastic_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ac_elastic_rs'
+
+  /daily/1/daily_search:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/daily_search_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/daily_search_rs'
+
+  /discover/3/get:
+    get:
+      description: Temp desc
+      parameters:
+        - name: g
+          in: query
+          description: Genre
+          required: false
+          example: electronic
+          schema:
+            type: string
+        - name: t
+          in: query
+          description: Subgenre
+          required: false
+          example: house
+          schema:
+            type: string
+        - name: s
+          in: query
+          description: Sort
+          required: false
+          schema:
+            type: string
+            enum:
+              - top
+              - new
+              - rec
+        - name: r
+          in: query
+          description: Recommendations
+          required: false
+          schema:
+            type: string
+            enum:
+              - most
+              - latest
+        - name: f
+          in: query
+          description: Format
+          required: false
+          schema:
+            $ref: '#/components/schemas/format'
+        - name: gn
+          in: query
+          description: ID of the location (GeoName)
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: p
+          in: query
+          description: Page
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/discover_rs'
+
+  /discover/3/get_web:
+    get:
+      description: Temp desc
+      parameters:
+        - name: g
+          in: query
+          description: Genre
+          required: false
+          example: electronic
+          schema:
+            type: string
+        - name: t
+          in: query
+          description: Subgenre
+          required: false
+          example: house
+          schema:
+            type: string
+        - name: s
+          in: query
+          description: Sort
+          required: true
+          schema:
+            type: string
+            enum:
+              - top
+              - new
+              - rec
+        - name: r
+          in: query
+          description: Recommendations
+          required: false
+          schema:
+            type: string
+            enum:
+              - most
+              - latest
+        - name: f
+          in: query
+          description: Format
+          required: false
+          schema:
+            $ref: '#/components/schemas/format'
+        - name: gn
+          in: query
+          description: ID of the location (GeoName)
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: p
+          in: query
+          description: Page
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                #TODO: check
+                $ref: '#/components/schemas/discover_rs'
+
+  /discover/3/discover_tag_arts:
+    get:
+      description: Temp desc
+      parameters:
+        - name: tag
+          in: query
+          description: Tag
+          required: true
+          example: vaporwave
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/discover_tag_arts_rs'
+
+  /fancollection/1/collection_items:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/fan_collection_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fan_collection'
+
+  /fancollection/1/wishlist_items:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/fan_collection_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fan_collection'
+
+  /fancollection/1/following_bands:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/fan_collection_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/following_bands_rs'
+
+  /fancollection/1/following_genres:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/fan_collection_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/following_genres_rs'
+
+  /fancollection/1/following_fans:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/fan_collection_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fans_rs'
+
+  /fancollection/1/followers:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/fan_collection_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fans_rs'
+
+  /fancollection/1/search_items:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/fan_search_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fan_search_rs'
+
+  /fansignup/1/search_tag:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/search_tag_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/search_tag_rs'
+
+  /fuzzysearch/1/app_autocomplete:
+    get:
+      description: Temp desc
+      parameters:
+        - name: q
+          in: query
+          description: Query string
+          required: true
+          schema:
+            type: string
+        - name: param_with_locations
+          in: query
+          description: Temp desc
+          required: false
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fuzzysearch_rs'
+
+  /fuzzysearch/1/tag_autocomplete:
+    get:
+      description: Temp desc
+      parameters:
+        - name: q
+          in: query
+          description: Query string
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/found_tags'
+
+  /mobile/24/band_details:
+    get:
+      description: Temp desc
+      parameters:
+        - name: band_id
+          in: query
+          description: Band ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/band_details'
+
+  /mobile/24/tralbum_details:
+    get:
+      description: Temp desc
+      parameters:
+        - name: band_id
+          in: query
+          description: Band ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: tralbum_id
+          in: query
+          description: Track/Album ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: tralbum_type
+          in: query
+          description: Type of item (album/track)
+          required: true
+          schema:
+            $ref: '#/components/schemas/tralbum_type'
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tralbum_details'
+
+  /mobile/24/tralbum_tags:
+    get:
+      description: Temp desc
+      parameters:
+        - name: band_id
+          in: query
+          description: Band ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: tralbum_id
+          in: query
+          description: Track/Album ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: tralbum_type
+          in: query
+          description: Type of item (album/track)
+          required: true
+          schema:
+            $ref: '#/components/schemas/tralbum_type'
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tralbum_tags'
+
+  /mobile/24/tralbum_lyrics:
+    get:
+      description: Temp desc
+      parameters:
+        - name: tralbum_id
+          in: query
+          description: Track/Album ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: tralbum_type
+          in: query
+          description: Type of item (album/track)
+          required: true
+          schema:
+            $ref: '#/components/schemas/tralbum_type'
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tralbum_lyrics'
+
+  /mobile/24/fan_bio:
+    get:
+      description: Temp desc
+      parameters:
+        - name: fan_id
+          in: query
+          description: Fan ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fan_bio'
+
+  /mobile/24/fan_collection:
+    get:
+      description: Temp desc
+      parameters:
+        - name: fan_id
+          in: query
+          description: Fan ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: older_than
+          in: query
+          description: Temp desc
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mob_fan_collection'
+
+  /mobile/24/fan_wishlist:
+    get:
+      description: Temp desc
+      parameters:
+        - name: fan_id
+          in: query
+          description: Fan ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: older_than
+          in: query
+          description: Temp desc
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mob_fan_collection'
+
+  /mobile/24/fan_follows:
+    get:
+      description: Temp desc
+      parameters:
+        - name: fan_id
+          in: query
+          description: Fan ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: older_than
+          in: query
+          description: Temp desc
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mob_fan_follows'
+
+  /mobile/24/fan_followed_by:
+    get:
+      description: Temp desc
+      parameters:
+        - name: fan_id
+          in: query
+          description: Fan ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: older_than
+          in: query
+          description: Temp desc
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mob_fan_followed_by'
+
+  /mobile/24/merch_details:
+    get:
+      description: Temp desc
+      parameters:
+        - name: band_id
+          in: query
+          description: Band ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: package_ids
+          in: query
+          style: form
+          explode: true
+          description: Package IDs
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mob_merch_details_rs'
+
+  /mobile/24/currencies:
+    get:
+      description: Temp desc
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mob_currencies_rs'
+
+  /tralbumcollectors/2/reviews:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/collectors_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/reviews_rs'
+
+  /tralbumcollectors/2/thumbs:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/collectors_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/thumbs_rs'
+
+  /location/1/geoname_search:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/geoname_search_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/geoname_search_rs'
+
+  /location/1/geoname_lookup:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/geoname_search_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/geoname_lookup_rs'
+
+  /live_listings/1/get_shows:
+    post:
+      description: Temp desc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/get_shows_rq'
+        required: true
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/get_shows_rs'
+
+  /salesfeed/1/get:
+    get:
+      description: Temp desc
+      parameters:
+        - name: start_date
+          in: query
+          description: Temp desc
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Temp desc
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sales_feed_rs'
+
+
+components:
+  schemas:
+
+    format:
+      type: string
+      enum:
+        - all
+        - vinyl
+        - cd
+        - cassette
+        - digital
+
+    tralbum_type:
+      description: Type of item (album/track)
+      type: string
+      enum:
+        - a
+        - t
+
+    item_type:
+      description: band/album/track/fan
+      type: string
+      #TODO
+      enum:
+        - ''
+        - b
+        - a
+        - t
+        - f
+        - p
+
+    image:
+      type: object
+      properties:
+        image_id:
+          type: integer
+          format: int64
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+
+    geoname:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '4155751'
+        name:
+          type: string
+          example: Florida
+        fullname:
+          type: string
+          example: 'Florida, United States'
+
+    url_hints:
+      type: object
+      properties:
+        subdomain:
+          type: string
+          example: thetrickytrees
+        custom_domain:
+          type: string
+        custom_domain_verified:
+          type: integer
+          format: int64
+        slug:
+          type: string
+          example: bandcamp-radio-hip-hop-show-53
+        item_type:
+          $ref: '#/components/schemas/item_type'
+
+    streaming_url:
+      type: object
+      additionalProperties:
+        type: string
+        example: 'https://bandcamp.com/stream_redirect?enc=mp3-128&track_id=2481577318&ts=1673006900&t=717b07498907690440bb34d9eea77338adb87bbd'
+
+    dig_deeper_rq:
+      type: object
+      required:
+        - filters
+        - page
+      properties:
+        filters:
+          type: object
+          required:
+            - format
+            - location
+            - sort
+            - tags
+          properties:
+            format:
+              $ref: '#/components/schemas/format'
+            location:
+              type: integer
+              format: int64
+              description: ID of the location
+            sort:
+              type: string
+              enum:
+                - random
+                - pop
+                - date
+            tags:
+              type: array
+              items:
+                type: string
+        page:
+          type: integer
+          format: int32
+
+    package:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: '1330962887'
+        price:
+          type: object
+          properties:
+            amount:
+              type: integer
+              format: int64
+              example: '950'
+            currency:
+              type: string
+              example: USD
+            is_money:
+              type: boolean
+        is_set_price:
+          type: integer
+          format: int64
+        currency:
+          type: string
+          example: USD
+        type_str:
+          $ref: '#/components/schemas/format'
+        is_vinyl:
+          type: boolean
+        image_ids:
+          type: array
+          items:
+            type: integer
+            format: int64
+        image:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            width:
+              type: integer
+              format: int32
+            height:
+              type: integer
+              format: int32
+        quantity:
+          type: integer
+          format: int64
+
+    dig_deeper_item:
+      type: object
+      properties:
+        tralbum_type:
+          $ref: '#/components/schemas/tralbum_type'
+        tralbum_id:
+          type: integer
+          format: int64
+        item_id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        art_id:
+          type: integer
+          format: int64
+        audio_track_id:
+          type: integer
+          format: int64
+        featured_track_title:
+          type: string
+        featured_track_number:
+          type: integer
+          format: int32
+        artist:
+          type: string
+        band_name:
+          type: string
+        subdomain:
+          type: string
+        custom_domain:
+          type: string
+        custom_domain_verified:
+          type: integer
+          format: int32
+        genre_id:
+          type: integer
+          format: int64
+        slug_text:
+          type: string
+        item_type:
+          type: string
+          example: a
+        band_id:
+          type: integer
+          format: int64
+          example: '2017668235'
+        is_preorder:
+          type: integer
+          format: int32
+        packages:
+          type: array
+          items:
+            $ref: '#/components/schemas/package'
+        num_comments:
+          type: integer
+          format: int64
+          example: '0'
+        band_url:
+          type: string
+          example: 'https://section9tapes.bandcamp.com'
+        tralbum_url:
+          type: string
+          example: 'https://section9tapes.bandcamp.com/album/snacks-for-the-night-time'
+        genre:
+          type: string
+          example: electronic
+        audio_url:
+          $ref: '#/components/schemas/streaming_url'
+
+    dig_deeper_rs:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        filters:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/dig_deeper_item'
+        more_available:
+          type: boolean
+        discover_spec:
+          type: object
+          properties:
+            genre_id:
+              type: integer
+              format: int64
+            genre_name:
+              type: string
+            genre_pretty_name:
+              type: string
+            tag_id:
+              type: integer
+              format: int64
+            tag_name:
+              type: string
+            tag_pretty_name:
+              type: string
+            geoname_id:
+              type: integer
+              format: int64
+            geoname_name:
+              type: string
+            format_type_id:
+              type: integer
+              format: int64
+            format:
+              type: string
+              example: all
+            spec_name:
+              type: string
+            discover_id:
+              type: integer
+              format: int64
+            dig_deeper_followed:
+              type: boolean
+
+    bcweekly_list_item:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        date:
+          type: string
+          example: '09 Dec 2022 00:00:00 GMT'
+        subtitle:
+          type: string
+        image_id:
+          type: integer
+          format: int64
+        screen_image_id:
+          type: integer
+          format: int64
+        v2_image_id:
+          type: integer
+          format: int64
+        published_date:
+          type: string
+          example: '09 Dec 2022 00:00:00 GMT'
+        image_caption:
+          type: string
+        desc:
+          type: string
+        button_color:
+          type: string
+          example: 2d131a
+
+    bcweekly_get_item:
+      type: object
+      properties:
+        show_id:
+          type: integer
+          format: int64
+          example: '611'
+        date:
+          type: string
+          example: '15 Dec 2022 00:00:00 GMT'
+        published_date:
+          type: string
+          example: '16 Dec 2022 00:00:00 GMT'
+        title:
+          type: string
+          example: The Hip Hop Show
+        subtitle:
+          type: string
+          example: Master Of Ceremonies
+        desc:
+          type: string
+        show_image_id:
+          type: integer
+          format: int64
+          example: '30802544'
+        show_screen_image_id:
+          type: integer
+          format: int64
+          example: '30802546'
+        show_v2_image_id:
+          type: integer
+          format: int64
+          example: '30802544'
+        image_caption:
+          type: string
+        audio_url_hash:
+          $ref: '#/components/schemas/url_hints'
+        audio_title:
+          type: string
+          example: Bandcamp Radio Hip-Hop Show 53
+        audio_stream:
+          $ref: '#/components/schemas/streaming_url'
+        audio_track_id:
+          type: integer
+          format: int64
+          example: '1361452104'
+        stream_infos:
+          type: object
+          properties:
+            encodings_id:
+              type: integer
+              format: int64
+              example: '2445413003'
+            format:
+              type: integer
+              format: int64
+              example: '101'
+            file_id:
+              type: integer
+              format: int64
+              example: '1643935659'
+            metadata_crc:
+              type: string
+        audio_duration:
+          type: number
+          format: float
+          example: '4622.81'
+        button_color:
+          type: string
+          example: 8c6d9a
+        dark_mode:
+          type: string
+        short_desc:
+          type: string
+          example: Honey Blu guests on the last Hip-Hop show of the year.
+        tracks:
+          type: array
+          items:
+            type: object
+            properties:
+              track_id:
+                type: integer
+                format: int64
+                example: '3832765031'
+              title:
+                type: string
+                example: Epicenter
+              url_hints:
+                $ref: '#/components/schemas/url_hints'
+              track_url:
+                type: string
+                example: 'https://headnodic.bandcamp.com/track/epicenter'
+              artist:
+                type: string
+                example: Headnodic
+              location_text:
+                type: string
+                example: 'Oakland, California'
+              album_id:
+                type: integer
+                format: int64
+                example: '2018799184'
+              album_title:
+                type: string
+                example: Junk Drawer Vol.2
+              is_preorder:
+                type: boolean
+              band_id:
+                type: integer
+                format: int64
+                example: '1802905033'
+              timecode:
+                type: integer
+                format: int64
+                example: '0'
+              track_art_id:
+                type: integer
+                format: int64
+                example: '2153339283'
+              bio_image_id:
+                type: integer
+                format: int64
+                example: '13469101'
+              merch_ids:
+                type: array
+                items:
+                  type: integer
+                  format: int64
+                  example: '3465077070'
+              package_image_ids:
+                type: array
+                items:
+                  type: integer
+                  format: int64
+                  example: '30735154'
+              is_set_price:
+                type: boolean
+              price:
+                type: number
+              is_purchasable:
+                type: boolean
+              currency:
+                type: string
+                example: USD
+              label:
+                type: string
+              require_email:
+                type: boolean
+              album_url:
+                type: string
+                example: 'https://headnodic.bandcamp.com/album/junk-drawer-vol-2'
+              url:
+                type: string
+                example: 'https://headnodic.bandcamp.com/album/junk-drawer-vol-2'
+
+    ac_elastic_rq:
+      type: object
+      required:
+        - search_text
+        - search_filter
+        - full_page
+      properties:
+        search_text:
+          type: string
+        search_filter:
+          $ref: '#/components/schemas/item_type'
+        full_page:
+          type: boolean
+        fan_id:
+          type: integer
+          format: int64
+
+    # almost same as fuzzysearch_item
+    ac_elastic_item:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/item_type'
+        id:
+          type: integer
+          format: int64
+          example: '40247404'
+        art_id:
+          type: integer
+          format: int64
+        img_id:
+          type: integer
+          format: int64
+          example: '17620204'
+        name:
+          type: string
+          example: Vaporwave Tapes Brasil
+        username:
+          type: string
+        band_id:
+          type: integer
+          format: int64
+        band_name:
+          type: string
+        album_name:
+          type: string
+        item_url_root:
+          type: string
+          example: 'https://vwtbr.bandcamp.com'
+        item_url_path:
+          type: string
+        collection_size:
+          type: integer
+          format: int64
+        location:
+          type: string
+          example: Brazil
+        is_label:
+          type: boolean
+        tag_names:
+          type: array
+          items:
+            type: string
+            example: Electronic
+        img:
+          type: string
+          example: 'https://f4.bcbits.com/img/0017620204_23.jpg'
+        image_id:
+          type: integer
+          format: int64
+        album_id:
+          type: integer
+          format: int64
+        genre_name:
+          type: string
+          example: Electronic
+        stat_params:
+          type: string
+          example: >-
+            search_item_id=40247404&search_item_type=b&search_match_part=%3F&search_page_id=2319640601&search_page_no=0&search_rank=1
+
+
+    found_tag:
+      type: object
+      properties:
+        display_tag_id:
+          type: integer
+          format: int64
+          example: '351132955'
+        score:
+          type: integer
+          format: int64
+          example: '0'
+        count:
+          type: integer
+          format: int32
+          example: '65150'
+        norm_name:
+          type: string
+          example: vaporwave
+        display_name:
+          type: string
+          example: vaporwave
+
+    found_tags:
+      type: object
+      properties:
+        matches:
+          type: array
+          items:
+            $ref: '#/components/schemas/found_tag'
+        count:
+          type: integer
+          format: int32
+          example: '1'
+        time_ms:
+          type: integer
+          format: int32
+          example: '1'
+
+    ac_elastic_rs:
+      type: object
+      properties:
+        auto:
+          type: object
+          properties:
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/ac_elastic_item'
+            stat_params_for_tag:
+              type: string
+              example: >-
+                search_item_id=2&search_item_type=%40&search_match_part=%3F&search_page_id=2319640601&search_page_no=0&search_rank=1
+            time_ms:
+              type: integer
+              format: int64
+              example: '143'
+        tag:
+          $ref: '#/components/schemas/found_tags'
+        genre:
+          type: object
+          properties:
+            match:
+              type: object
+              properties:
+                genre:
+                  type: string
+                  example: electronic
+                subgenre:
+                  type: string
+                  example: vaporwave
+
+    daily_search_rq:
+      type: object
+      required:
+        - q
+        - page
+      properties:
+        q:
+          type: string
+        page:
+          type: integer
+          format: int32
+
+    daily_search_item:
+      type: object
+      properties:
+        wordpress_id:
+          type: integer
+          format: int64
+          example: '157843'
+        publish_date:
+          type: string
+          example: '05 Dec 2022 14:30:26 GMT'
+        title:
+          type: string
+          example: 'The Best Albums of 2022: A – D'
+        slug:
+          type: string
+          example: the-best-albums-of-2022-a-d
+        blurb:
+          type: string
+          example: Our guide to the year’s best albums.
+        feature_image_id:
+          type: integer
+          format: int64
+          example: '30659013'
+        franchise_slug:
+          type: string
+          example: best-of-2022
+        franchise_name:
+          type: string
+          example: Best of 2022
+        franchise_category:
+          type: string
+          example: l
+        aotd_album_id:
+          type: integer
+          format: int64
+        aotd_special:
+          type: string
+        aotd_layout:
+          type: boolean
+        url:
+          type: string
+          example: /best-of-2022/the-best-albums-of-2022-a-d
+        franchise_caps:
+          type: string
+          example: BEST OF 2022
+        classes:
+          type: string
+          example: ''
+        aotd_album_art_id:
+          type: integer
+          format: int64
+
+    daily_search_rs:
+      type: object
+      properties:
+        articles:
+          type: array
+          items:
+            $ref: '#/components/schemas/daily_search_item'
+        page:
+          type: integer
+          format: int32
+          example: '1'
+        per_page:
+          type: integer
+          format: int64
+          example: '30'
+        num_wp_results:
+          type: integer
+          format: int64
+          example: '30'
+        show_more_link:
+          type: boolean
+        url_prefix:
+          type: string
+          example: ''
+        url_params:
+          type: string
+          example: q=vaporwave
+        title:
+          type: string
+          example: 'Results: vaporwave'
+        slug:
+          type: string
+          example: search
+
+    discover_item:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/item_type'
+        id:
+          type: integer
+          format: int64
+          example: '817797480'
+        category:
+          type: string
+          example: solr_hack
+        extras:
+          type: string
+        score:
+          type: number
+          format: float
+          example: '0.0'
+        band_id:
+          type: integer
+          format: int64
+          example: '810851956'
+        item_type_id:
+          type: string
+          example: a817797480solr_hack
+        is_preorder:
+          type: integer
+          format: int32
+        publish_date:
+          type: string
+          example: '07 Oct 2022 09:14:31 GMT'
+        genre_text:
+          type: string
+          example: electronic
+        primary_text:
+          type: string
+          example: Distortion Matters
+        secondary_text:
+          type: string
+          example: Sacerdos Vigilia
+        art_id:
+          type: integer
+          format: int64
+          example: '4141945998'
+        alt_art_image_id:
+          type: integer
+          format: int64
+        url_hints:
+          $ref: '#/components/schemas/url_hints'
+        featured_track:
+          type: object
+          properties:
+            file:
+              $ref: '#/components/schemas/streaming_url'
+            duration:
+              type: number
+              format: float
+            id:
+              type: integer
+              format: int64
+              example: '1453335963'
+            title:
+              type: string
+              example: Beafuzz and Basshead
+            encodings_id:
+              type: integer
+              format: int64
+              example: '819334416'
+        location_text:
+          type: string
+          example: 'Amsterdam, Netherlands'
+        package_title:
+          type: string
+        bio_image:
+          $ref: '#/components/schemas/image'
+        package_art1:
+          type: string
+        package_art2:
+          type: string
+        package_art3:
+          type: string
+        package_art4:
+          type: string
+        recommendations:
+          type: array
+          items:
+            type: object
+            properties:
+              rec_band_name:
+                type: string
+              rec_why:
+                type: string
+              rec_date:
+                type: string
+                example: '10 Aug 2021 06:23:44 GMT'
+              rec_band_url_hash:
+                type: object
+                properties:
+                  subdomain:
+                    type: string
+                  custom_domain:
+                    type: string
+                  rec_band_custom_domain_verified:
+                    type: string
+        license_id:
+          type: string
+        territories:
+          type: string
+        lo_querystr:
+          type: string
+          example: >-
+            ?action_sig=21a64f8bc12e425a1848976fa25cc72f&action_url=https%3A%2F%2Fbandcamp.com&band_id=810851956&item_id=817797480&item_type=a
+    
+    
+    
+
+    discover_rs:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/discover_item'
+        args:
+          type: object
+          properties:
+            g:
+              type: string
+              example: electronic
+            s:
+              type: string
+              example: top
+            f:
+              $ref: '#/components/schemas/format'
+            r:
+              type: string
+            w:
+              type: integer
+              format: int64
+              example: '0'
+            p:
+              type: integer
+              format: int64
+              example: '0'
+            following:
+              type: boolean
+        timestamp:
+          type: string
+          example: '11 Dec 2022 13:53:39 GMT'
+        ui_sig:
+          type: string
+          example: junk
+        data_sig:
+          type: string
+          example: junk
+        total_count:
+          type: integer
+          format: int64
+          example: '26'
+        spec_id:
+          type: integer
+          format: int64
+          example: '59596'
+
+    discover_tag_arts_rs:
+      type: object
+      properties:
+        art_ids:
+          type: array
+          items:
+            type: integer
+            format: int64
+            example: '3446344701'
+
+    tralbum_tag:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Electronic
+        norm_name:
+          type: string
+          example: electronic
+        url:
+          type: string
+          example: /tag/electronic
+        isloc:
+          type: boolean
+        loc_id:
+          type: integer
+          format: int64
+        geoname:
+          $ref: '#/components/schemas/geoname'
+
+    fan_collection_rq:
+      type: object
+      properties:
+        fan_id:
+          type: integer
+          format: int64
+          example: '1810501'
+        older_than_token:
+          type: string
+          description: >-
+            1. Unix epoch timestamp of when fan "added" this item
+            2. "tralbum_id" of the item in question
+            3. "trablum_type" of the item in question
+            4. (?) Increasing index of items past initial set on users fan page (index can jump values)
+            5. empty
+          example: '1522419189:1563087744:a:61:'
+        count:
+          type: integer
+          format: int32
+          example: '20'
+      required:
+        - fan_id
+        - older_than_token
+        - count
+
+    fan_collection_tralbum:
+      type: object
+      properties:
+        fan_id:
+          type: integer
+          format: int64
+          example: '7862021'
+        item_id:
+          type: integer
+          format: int64
+          example: '1019028427'
+        item_type:
+          type: string
+          example: album
+        band_id:
+          type: integer
+          format: int64
+          example: '600742076'
+        added:
+          type: string
+          example: '26 Sep 2022 01:19:45 GMT'
+        updated:
+          type: string
+          example: '27 Sep 2022 20:00:54 GMT'
+        purchased:
+          type: string
+          example: '26 Sep 2022 01:19:45 GMT'
+        sale_item_id:
+          type: integer
+          format: int64
+          example: '213860211'
+        sale_item_type:
+          type: string
+          #TODO
+          example: p
+        tralbum_id:
+          type: integer
+          format: int64
+          example: '1019028427'
+        tralbum_type:
+          $ref: '#/components/schemas/tralbum_type'
+        featured_track:
+          type: integer
+          format: int64
+          example: '1673278506'
+        why:
+          type: string
+        hidden:
+          type: string
+        index:
+          type: integer
+          format: int64
+        also_collected_count:
+          type: integer
+          format: int64
+        url_hints:
+          $ref: '#/components/schemas/url_hints'
+        item_title:
+          type: string
+          example: CHAO GARDENS
+        item_url:
+          type: string
+          example: 'https://miyalowe.bandcamp.com/album/chao-gardens'
+        item_art_id:
+          type: integer
+          format: int64
+          example: '2074604315'
+        item_art_url:
+          type: string
+          example: 'https://f4.bcbits.com/img/a2074604315_9.jpg'
+        item_art:
+          type: object
+          properties:
+            url:
+              type: string
+              example: 'https://f4.bcbits.com/img/a2074604315_9.jpg'
+            thumb_url:
+              type: string
+              example: 'https://f4.bcbits.com/img/a2074604315_3.jpg'
+            art_id:
+              type: integer
+              format: int64
+              example: '2074604315'
+        band_name:
+          type: string
+          example: EVABOY
+        band_url:
+          type: string
+          example: 'https://miyalowe.bandcamp.com'
+        genre_id:
+          type: integer
+          format: int64
+          example: '10'
+        featured_track_title:
+          type: string
+          example: HEX02
+        featured_track_number:
+          type: integer
+          format: int32
+          example: '7'
+        featured_track_is_custom:
+          type: boolean
+        featured_track_duration:
+          type: number
+          format: float
+          example: '274.074'
+        featured_track_url:
+          type: string
+          example: 'https://miyalowe.bandcamp.com/album/chao-gardens?t=7'
+        featured_track_encodings_id:
+          type: integer
+          format: int64
+          example: '2555611395'
+        package_details:
+          type: object
+          properties:
+            title:
+              type: string
+            description:
+              type: string
+            private:
+              type: boolean
+            killed:
+              type: boolean
+            band_id:
+              type: integer
+              format: int64
+            label_id:
+              type: integer
+              format: int64
+            is_subscriber_only:
+              type: boolean
+            is_live_event:
+              type: boolean
+            live_event_type:
+              type: string
+            images:
+              type: array
+              items:
+                $ref: '#/components/schemas/image'
+            band_name:
+              type: string
+            url_hints:
+              $ref: '#/components/schemas/url_hints'
+            item_url:
+              type: string
+              example: 'https://lannds.bandcamp.com/album/lotus-deluxe'
+        num_streamable_tracks:
+          type: integer
+          format: int32
+          example: '10'
+        is_purchasable:
+          type: boolean
+        is_private:
+          type: boolean
+        is_preorder:
+          type: boolean
+        is_giftable:
+          type: boolean
+        is_subscriber_only:
+          type: boolean
+        is_subscription_item:
+          type: boolean
+        service_name:
+          type: string
+        service_url_fragment:
+          type: string
+        gift_sender_name:
+          type: string
+        gift_sender_note:
+          type: string
+        gift_id:
+          type: integer
+          format: int64
+        gift_recipient_name:
+          type: string
+        album_id:
+          type: integer
+          format: int64
+          example: '1019028427'
+        album_title:
+          type: string
+          example: CHAO GARDENS
+        listen_in_app_url:
+          type: string
+          example: >-
+            https://bandcamp.com/redirect_to_app?fallback_url=https%3A%2F%2Fbandcamp.com%2Fthis_is_an_appstore_url%3Fapp%3Dfan_app&url=x-bandcamp%3A%2F%2Fshow_tralbum%3Ftralbum_type%3Da%26tralbum_id%3D1019028427%26play%3D1&sig=894b5e17cfc1128fb7d707e5dd3b282c
+        band_location:
+          type: string
+        band_image_id:
+          type: integer
+          format: int64
+        release_count:
+          type: integer
+          format: int32
+        message_count:
+          type: integer
+          format: int64
+        is_set_price:
+          type: boolean
+        price:
+          type: number
+        has_digital_download:
+          type: boolean
+        merch_ids:
+          type: array
+          items:
+            type: integer
+            format: int64
+            example: '1392142342'
+        merch_sold_out:
+          type: boolean
+        currency:
+          type: string
+          example: USD
+        label:
+          type: string
+        label_id:
+          type: integer
+          format: int64
+          example: '1042885834'
+        require_email:
+          type: boolean
+        item_art_ids:
+          type: string
+        releases:
+          type: string
+        discount:
+          type: string
+        token:
+          type: string
+          example: '1664155185:-:a1019028427:0:0'
+        variant_id:
+          type: integer
+          format: int64
+        merch_snapshot:
+          type: object
+          properties:
+            #TODO
+            package_type_id:
+              type: integer
+              format: int64
+            merch_art_0:
+              type: integer
+              format: int64
+            merch_art_1:
+              type: integer
+              format: int64
+            merch_art_2:
+              type: integer
+              format: int64
+        featured_track_license_id:
+          type: integer
+          format: int64
+        licensed_item:
+          type: string
+        download_available:
+          type: boolean
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/tralbum_tag'
+
+    fan_collection_track:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: '3101234543'
+        title:
+          type: string
+          example: RobertaFlack (Other Mix)
+        artist:
+          type: string
+          example: Flying Lotus
+        track_number:
+          type: integer
+          format: int64
+          example: '5'
+        duration:
+          type: number
+          format: float
+        file:
+          $ref: '#/components/schemas/streaming_url'
+
+    fan_collection:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/fan_collection_tralbum'
+        more_available:
+          type: boolean
+        tracklists:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              $ref: '#/components/schemas/fan_collection_track'
+        redownload_urls:
+          type: object
+          #TODO
+          properties: { }
+        item_lookup:
+          type: object
+          properties: { }
+        last_token:
+          type: string
+          example: '1535185404:1682844870:a:81:'
+        purchase_infos:
+          type: object
+          properties: { }
+        collectors:
+          type: object
+          properties: { }
+
+    following_band_item:
+      type: object
+      properties:
+        band_id:
+          type: integer
+          format: int64
+          example: '2808799722'
+        image_id:
+          type: integer
+          format: int64
+          example: '6754836'
+        art_id:
+          type: integer
+          format: int64
+          example: '4064710068'
+        url_hints:
+          $ref: '#/components/schemas/url_hints'
+        name:
+          type: string
+          example: Satellite Young
+        is_following:
+          type: boolean
+        is_subscribed:
+          type: boolean
+        location:
+          type: string
+          example: 'Tokyo, Japan'
+        date_followed:
+          type: string
+          example: '17 Dec 2018 07:10:27 GMT'
+        token:
+          type: string
+          example: '1545030627:2808799722'
+
+    following_bands_rs:
+      type: object
+      properties:
+        followeers:
+          type: array
+          items:
+            $ref: '#/components/schemas/following_band_item'
+
+        more_available:
+          type: boolean
+        last_token:
+          type: string
+          example: '1534228704:2133206240'
+
+    following_genre_item:
+      type: object
+      properties:
+        discover_id:
+          type: integer
+          format: int64
+          example: '17'
+        name:
+          type: string
+          example: prog rock
+        norm_name:
+          type: string
+          example: prog-rock
+        token:
+          type: string
+          example: prog-rock
+        is_following:
+          type: boolean
+        date:
+          type: string
+        genre_id:
+          type: integer
+          format: int64
+          example: '23'
+        tag_id:
+          type: integer
+          format: int64
+          example: '1423295953'
+        geoname_id:
+          type: integer
+          format: int64
+          example: '0'
+        format_type:
+          type: string
+          example: all
+        art_ids:
+          type: array
+          items:
+            type: integer
+            format: int64
+            example: '3238328474'
+        location:
+          type: string
+        discover_url:
+          type: string
+        tag_page_url:
+          type: string
+          example: 'http://bandcamp.com/tag/prog-rock'
+        display_name:
+          type: string
+          example: prog rock
+
+    following_genres_rs:
+      type: object
+      properties:
+        followeers:
+          type: array
+          items:
+            $ref: '#/components/schemas/following_genre_item'
+        more_available:
+          type: boolean
+        last_token:
+          type: string
+          example: vaporwave
+
+    fan:
+      type: object
+      properties:
+        fan_id:
+          type: integer
+          format: int64
+          example: '1954345'
+        band_id:
+          type: integer
+          format: int64
+        fan_url:
+          type: string
+        image_id:
+          type: integer
+          format: int64
+          example: '14050865'
+        trackpipe_url:
+          type: string
+          example: 'https://bandcamp.com/necroxiii'
+        name:
+          type: string
+          example: NECRO XIII
+        is_following:
+          type: boolean
+        location:
+          type: string
+        date_followed:
+          type: string
+          example: '16 Dec 2018 04:06:45 GMT'
+        token:
+          type: string
+          example: '1544933205:1954345'
+
+    fans_rs:
+      type: object
+      properties:
+        followeers:
+          type: array
+          items:
+            $ref: '#/components/schemas/fan'
+        more_available:
+          type: boolean
+        last_token:
+          type: string
+          example: '1511858751:1937616'
+
+    fan_search_rq:
+      type: object
+      properties:
+        fan_id:
+          type: integer
+          format: int64
+          example: '1810501'
+        search_key:
+          type: string
+        search_type:
+          type: string
+          enum:
+            - collection
+            - wishlist
+      required:
+        - fan_id
+        - search_key
+        - search_type
+
+    fan_search_rs:
+      type: object
+      properties:
+        tralbums:
+          type: array
+          items:
+            $ref: '#/components/schemas/fan_collection_tralbum'
+        gifts:
+          type: array
+          #TODO
+          items: { }
+        tracklists:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              $ref: '#/components/schemas/fan_collection_track'
+        redownload_urls:
+          type: object
+          #TODO
+          properties: { }
+        similar_gift_ids:
+          type: object
+        item_lookup:
+          type: object
+          properties: { }
+        search_key:
+          type: string
+          example: t
+
+    search_tag_rq:
+      type: object
+      required:
+        - search_term
+      properties:
+        search_term:
+          type: string
+          example: vapor
+        count:
+          type: integer
+          format: int64
+          example: '5'
+
+    search_tag_item:
+      type: object
+      properties:
+        tag_name:
+          type: string
+          example: vaporwave
+        tag_norm_name:
+          type: string
+          example: vaporwave
+        count:
+          type: integer
+          format: int64
+          example: '65151'
+
+    search_tag_rs:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        matching_tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/search_tag_item'
+
+    fuzzysearch_item:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/item_type'
+        id:
+          type: integer
+          format: int64
+          example: '4245275253'
+        art_id:
+          type: integer
+          format: int64
+        img_id:
+          type: integer
+          format: int64
+          example: '30175858'
+        name:
+          type: string
+          example: Vapor Vagabond
+        band_id:
+          type: integer
+          format: int64
+        band_name:
+          type: string
+        location:
+          type: string
+          example: 'New York, New York'
+        is_label:
+          type: boolean
+        tag_names:
+          type: array
+          items:
+            type: string
+            example: electronic
+        img:
+          type: string
+          example: 'https://f4.bcbits.com/img/0030175858_23.jpg'
+        genre_name:
+          type: string
+          example: Ambient
+        stat_params:
+          type: string
+          example: >-
+            search_item_id=4245275253&search_item_type=b&search_match_part=%3F&search_page_id=2361452700&search_page_no=0&search_rank=2
+        part:
+          type: string
+          example: z
+        url:
+          type: string
+          example: 'https://vaporvagabond.bandcamp.com'
+
+    fuzzysearch_rs:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/fuzzysearch_item'
+        time_ms:
+          type: integer
+          format: int64
+          example: '19'
+
+    band_site:
+      type: object
+      properties:
+        url:
+          type: string
+          example: 'http://www.100percentelectronica.com'
+        title:
+          type: string
+          example: 100percentelectronica.com
+
+    discography_item_type:
+      type: string
+      #TODO: research
+      enum:
+        - album
+        - track
+
+    discography_item:
+      type: object
+      properties:
+        item_id:
+          type: integer
+          format: int64
+          example: '3338270193'
+        item_type:
+          $ref: '#/components/schemas/discography_item_type'
+        artist_name:
+          type: string
+          example: Equip
+        band_name:
+          type: string
+          example: Equip
+        title:
+          type: string
+          example: Live in LA
+        art_id:
+          type: integer
+          format: int64
+          example: '3314882065'
+        release_date:
+          type: string
+          example: '09 Dec 2022 00:00:00 GMT'
+        is_purchasable:
+          type: boolean
+        band_id:
+          type: integer
+          format: int64
+          example: '2401527523'
+
+    merch_art:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: '3380583474'
+        file_name:
+          type: string
+          example: '3212666951'
+        index:
+          type: integer
+          format: int64
+          example: '0'
+        image_id:
+          type: integer
+          format: int64
+          example: '30024252'
+        width:
+          type: integer
+          format: int64
+          example: '3000'
+        height:
+          type: integer
+          format: int64
+          example: '3000'
+        crc:
+          type: integer
+          format: int64
+          example: '893774658'
+
+    merch_item:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: '3087489910'
+        type_id:
+          type: integer
+          format: int64
+          example: '2'
+        type_name:
+          type: string
+          example: Vinyl LP
+        title:
+          type: string
+          example: LTD Edition Orange Vinyl LP
+        grid_index:
+          type: integer
+          format: int64
+          example: '1'
+        subscriber_only:
+          type: boolean
+        arts:
+          type: array
+          items:
+            $ref: '#/components/schemas/merch_art'
+        album_art:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            url:
+              type: string
+              example: 'https://f4.bcbits.com/img/a2565257935_2.jpg'
+            https_url:
+              type: string
+              example: 'https://f4.bcbits.com/img/a2565257935_2.jpg'
+        download_type:
+          type: string
+          example: a
+        download_id:
+          type: integer
+          format: int64
+          example: '3338270193'
+        download_title:
+          type: string
+          example: Live in LA
+        download_has_audio:
+          type: boolean
+        band_id:
+          type: integer
+          format: int64
+          example: '2401527523'
+        artist_name:
+          type: string
+          example: Equip
+        in_stock:
+          type: boolean
+        is_live_ticket:
+          type: boolean
+        #TODO
+
+    band_artist:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: '2735295020'
+        name:
+          type: string
+          example: Windows96
+        image_id:
+          type: integer
+          format: int64
+          example: '17795727'
+        featured_date:
+          type: integer
+          format: int64
+          example: '0'
+        location:
+          type: string
+          example: 'São Paulo, Brazil'
+
+    band_details:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: '1280274042'
+        name:
+          type: string
+          example: 100% ELECTRONICA
+        bio_image_id:
+          type: integer
+          format: int64
+          example: '15863258'
+        bio_image_width:
+          type: integer
+          format: int64
+          example: '511'
+        bio_image_height:
+          type: integer
+          format: int64
+          example: '511'
+        bio:
+          type: string
+          example: >-
+            Founded in 2015, in Brooklyn, NY from the minds of George Clanton and
+            Lindsey French. 100% Electronica is the largest independent record label
+            specializing in the electronic internet music sub-genre, vaporwave. The
+            label boasts a roster of iconic artists such as George Clanton, Equip,
+            Negative Gemini, S U R F I N G, and more. 100% Electronica has a dedicated
+            worldwide community.
+        bandcamp_url:
+          type: string
+          example: 'https://100pelectronica.bandcamp.com'
+        sites:
+          type: array
+          items:
+            $ref: '#/components/schemas/band_site'
+        discography:
+          type: array
+          items:
+            $ref: '#/components/schemas/discography_item'
+        location:
+          type: string
+          example: 'Los Angeles, California'
+        header_image_id:
+          type: integer
+          format: int64
+          example: '18011958'
+        shows:
+          type: array
+          #TODO
+          items: { }
+        navbar_titles:
+          type: object
+          properties:
+            #TODO
+            m:
+              type: string
+              example: music
+            p:
+              type: string
+              example: merch
+            l:
+              type: string
+              example: live streams
+            a:
+              type: string
+              example: artists
+            v:
+              type: string
+              example: video
+            u:
+              type: string
+              example: audio
+            s:
+              type: string
+              example: subscribe
+            c:
+              type: string
+              example: community
+        merch:
+          type: array
+          items:
+            $ref: '#/components/schemas/merch_item'
+        artists:
+          type: array
+          items:
+            $ref: '#/components/schemas/band_artist'
+
+    tralbum_track:
+      type: object
+      properties:
+        track_id:
+          type: integer
+          format: int64
+          example: '2481577318'
+        track_license_id:
+          type: integer
+          format: int64
+        title:
+          type: string
+          example: whispers.wav
+        track_num:
+          type: integer
+          format: int32
+        streaming_url:
+          $ref: '#/components/schemas/streaming_url'
+        duration:
+          type: number
+          format: float
+        encodings_id:
+          type: integer
+          format: int64
+          example: '2103965417'
+        album_title:
+          type: string
+        band_name:
+          type: string
+          example: ESPRIT 空想
+        art_id:
+          type: integer
+          format: int64
+        album_id:
+          type: integer
+          format: int64
+          example: '3699790166'
+        is_streamable:
+          type: boolean
+        has_lyrics:
+          type: boolean
+        is_set_price:
+          type: boolean
+        price:
+          type: number
+        has_digital_download:
+          type: boolean
+        merch_ids:
+          type: array
+          items:
+            type: integer
+            format: int64
+            example: '1392142342'
+        merch_sold_out:
+          type: boolean
+        currency:
+          type: string
+          example: USD
+        require_email:
+          type: boolean
+        is_purchasable:
+          type: boolean
+        band_id:
+          type: integer
+          format: int64
+          example: '190442540'
+        label:
+          type: string
+          example: 100% ELECTRONICA
+        label_id:
+          type: integer
+          format: int64
+          example: '1280274042'
+
+    tralbum_details:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: '3699790166'
+        type:
+          $ref: '#/components/schemas/tralbum_type'
+        title:
+          type: string
+          example: virtua​.​zip
+        bandcamp_url:
+          type: string
+          example: 'https://georgeclanton.bandcamp.com/album/virtua-zip'
+        art_id:
+          type: integer
+          format: int64
+          example: '2819687779'
+        band:
+          type: object
+          properties:
+            band_id:
+              type: integer
+              format: int64
+              example: '190442540'
+            name:
+              type: string
+              example: George Clanton
+            image_id:
+              type: integer
+              format: int64
+              example: '29559870'
+            bio:
+              type: string
+            location:
+              type: string
+              example: 'Los Angeles, California'
+        tralbum_artist:
+          type: string
+          example: ESPRIT 空想
+        package_art:
+          type: array
+          items:
+            type: integer
+            format: int64
+            example: '30824704'
+        featured_track_id:
+          type: integer
+          format: int64
+          example: '2481577318'
+        tracks:
+          type: array
+          items:
+            $ref: '#/components/schemas/tralbum_track'
+        credits:
+          type: string
+        about:
+          type: string
+        album_id:
+          type: integer
+          format: int64
+          example: '3699790166'
+        album_title:
+          type: string
+          example: virtua​.​zip
+        release_date:
+          type: integer
+          format: int64
+          example: '1399420800'
+        is_purchasable:
+          type: boolean
+        free_download:
+          type: boolean
+        is_preorder:
+          type: boolean
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/tralbum_tag'
+        currency:
+          type: string
+          example: USD
+        is_set_price:
+          type: boolean
+        price:
+          type: number
+        require_email:
+          type: boolean
+        label:
+          type: string
+          example: 100% ELECTRONICA
+        label_id:
+          type: integer
+          format: int64
+          example: '1280274042'
+        package_details_lite:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              title:
+                type: string
+                example: virtua galaxy® Vinyl
+              image_ids:
+                type: array
+                items:
+                  type: integer
+                  format: int64
+                  example: '28044313'
+        has_digital_download:
+          type: boolean
+        num_downloadable_tracks:
+          type: integer
+          format: int64
+          example: '16'
+        merch_sold_out:
+          type: boolean
+        streaming_limit:
+          type: integer
+          format: int64
+          example: '3'
+
+    tralbum_tags:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: '3389303981'
+        type:
+          $ref: '#/components/schemas/tralbum_type'
+        band_id:
+          type: integer
+          format: int64
+          example: '1279738537'
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/tralbum_tag'
+
+    tralbum_lyrics:
+      type: object
+      properties:
+        lyrics:
+          type: object
+          additionalProperties:
+            type: string
+
+    fan_bio:
+      type: object
+      properties:
+        fan_id:
+          type: integer
+          format: int64
+          example: '7862021'
+        private:
+          type: string
+        disabled_date:
+          type: string
+        signup_date:
+          type: string
+          example: '28 Nov 2021 06:32:27 GMT'
+        name:
+          type: string
+          example: mistdemon
+        username:
+          type: string
+          example: mistdemon
+        location:
+          type: string
+          example: 'Tucson, Arizona'
+        image_id:
+          type: integer
+          format: int64
+          example: '27450371'
+        is_montage_image:
+          type: integer
+          format: int32
+        bio:
+          type: string
+          example: 'Ayo we listenin to beats dat mfin S L A P '
+        website_url:
+          type: string
+        fav_genre_id:
+          type: integer
+          format: int64
+          example: '10'
+        fav_genre_name:
+          type: string
+          example: Electronic
+        header_image_id:
+          type: integer
+          format: int64
+          example: '26868839'
+        header_image_is_custom:
+          type: boolean
+        header_image_align:
+          type: integer
+          format: int64
+          example: '0'
+        collection_size:
+          type: integer
+          format: int64
+          example: '224'
+        wishlist_size:
+          type: integer
+          format: int64
+          example: '35'
+        wishlist_private:
+          type: boolean
+        followers_count:
+          type: integer
+          format: int64
+          example: '27'
+        following_count:
+          type: integer
+          format: int64
+          example: '78'
+        following_fans_count:
+          type: integer
+          format: int64
+          example: '26'
+        following_bands_count:
+          type: integer
+          format: int64
+          example: '52'
+        following_genres_count:
+          type: integer
+          format: int64
+          example: '10'
+        following_genres_private:
+          type: boolean
+        id:
+          type: integer
+          format: int64
+          example: '7862021'
+        is_following:
+          type: boolean
+        items_in_common:
+          type: integer
+          format: int64
+          example: '0'
+
+    mob_fan_collection_review:
+      type: object
+      properties:
+        fan_id:
+          type: integer
+          format: int64
+          example: '2880101'
+        name:
+          type: string
+          example: jonser
+        image_id:
+          type: integer
+          format: int64
+          example: '30067700'
+        why:
+          type: string
+          example: >-
+            wow.its hard to put into words just how incredibly special and
+            needed this album is for me .thank you omori . sincerely...
+            thank you.
+        fav_track_title:
+          type: string
+          example: How...sad!
+
+    mob_fan_collection:
+      type: object
+      properties:
+        track_list:
+          type: array
+          items:
+            $ref: '#/components/schemas/tralbum_track'
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/fan_collection_tralbum'
+        collected_by:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              reviews:
+                type: array
+                items:
+                  $ref: '#/components/schemas/mob_fan_collection_review'
+              thumbs:
+                type: array
+                items:
+                  $ref: '#/components/schemas/mob_fan_collection_review'
+
+    mob_fan:
+      type: object
+      properties:
+        fan_id:
+          type: integer
+          format: int64
+          example: '273800'
+        name:
+          type: string
+          example: JayRenard
+        username:
+          type: string
+        image_id:
+          type: integer
+          format: int64
+          example: '28865497'
+        location:
+          type: string
+        date_followed:
+          type: integer
+          format: int64
+          example: '1665807133'
+        followed_by_fan:
+          type: boolean
+
+    mob_following_band:
+      type: object
+      properties:
+        band_id:
+          type: integer
+          format: int64
+          example: '600742076'
+        name:
+          type: string
+          example: miya lowe
+        image_id:
+          type: integer
+          format: int64
+          example: '25185699'
+        location:
+          type: string
+          example: 'San Francisco, California'
+        date_followed:
+          type: integer
+          format: int64
+          example: '1664155185'
+        followed_by_fan:
+          type: boolean
+
+    mob_fan_follows:
+      type: object
+      properties:
+        following_fans:
+          type: array
+          items:
+            $ref: '#/components/schemas/mob_fan'
+        following_bands:
+          type: array
+          items:
+            $ref: '#/components/schemas/mob_following_band'
+
+    mob_fan_followed_by:
+      type: object
+      properties:
+        followed_by:
+          type: array
+          items:
+            $ref: '#/components/schemas/mob_fan'
+
+    merch_origin:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: '3148319'
+        quantity:
+          type: integer
+          format: int64
+          example: '70'
+        quantity_sold:
+          type: integer
+          format: int64
+          example: '70'
+        quantity_available:
+          type: integer
+          format: int64
+          example: '0'
+        package_id:
+          type: integer
+          format: int64
+          example: '1499497684'
+        option_id:
+          type: integer
+          format: int64
+          example: '0'
+
+    currency:
+      type: object
+      properties:
+        symbol:
+          type: string
+          example: USD
+        long:
+          type: string
+          example: US Dollar
+        plural:
+          type: string
+          example: US Dollars
+        prefix_utf8:
+          type: string
+          example: $
+        prefix:
+          type: string
+          example: $
+        prefix_informal_utf8:
+          type: string
+          example: $
+        prefix_informal:
+          type: string
+          example: $
+        suffix_informal:
+          type: string
+          example: ''
+        places:
+          type: integer
+          format: int64
+          example: '2'
+        a_dollar:
+          type: number
+          example: '1.0'
+        small_min_price:
+          type: number
+          example: '0.5'
+        medium_min_price:
+          type: number
+          example: '0.5'
+        fixed_rate:
+          type: integer
+          format: int64
+          example: '1'
+        slang:
+          type: array
+          items:
+            type: string
+            example: bucks
+        paypal:
+          type: boolean
+        payflow:
+          type: boolean
+
+    discount:
+      type: object
+      properties:
+        discount_id:
+          type: integer
+          format: int64
+        discount_type:
+          type: string
+        price:
+          type: number
+        pinned:
+          type: boolean
+        percent:
+          type: integer
+          format: int32
+
+    merch_option:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        index:
+          type: integer
+          format: int64
+        title:
+          type: string
+        sku:
+          type: string
+        quantity:
+          type: integer
+          format: int32
+        quantity_sold:
+          type: integer
+          format: int32
+        quantity_available:
+          type: integer
+          format: int32
+        origins:
+          type: array
+          items:
+            $ref: '#/components/schemas/merch_origin'
+
+
+    mob_merch:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: '1499497684'
+        url:
+          type: string
+          example: 'https://deathsdynamicshroud.bandcamp.com/album/neon-memories'
+        type_id:
+          type: integer
+          format: int64
+          example: '2'
+        type_name:
+          type: string
+          example: Vinyl LP
+        title:
+          type: string
+          example: LTD Edition Baby Blue Vinyl EP
+        description:
+          type: string
+        desc_pt1:
+          type: string
+        desc_pt2:
+          type: string
+        new_desc_format:
+          type: integer
+          format: int64
+          example: '1'
+        grid_index:
+          type: integer
+          format: int64
+        private:
+          type: string
+        subscriber_only:
+          type: boolean
+        price:
+          type: integer
+          format: int64
+          example: '19'
+        is_set_price:
+          type: boolean
+        is_live_ticket:
+          type: boolean
+        live_event_over:
+          type: boolean
+        live_event_id:
+          type: integer
+          format: int64
+        live_event_title:
+          type: string
+        live_event_url:
+          type: string
+        live_event_gcal_url:
+          type: string
+        live_event_ical_url:
+          type: string
+        live_event_replays_enabled:
+          type: boolean
+        live_event_image_color_one:
+          type: string
+        live_event_image_color_two:
+          type: string
+        sku:
+          type: string
+          example: DDS/DL/147PA-1-2
+        upc:
+          type: string
+          example: '660355244629'
+        band_id:
+          type: integer
+          format: int64
+          example: '3123381972'
+        selling_band_id:
+          type: integer
+          format: int64
+          example: '1280274042'
+        label:
+          type: string
+          example: 100% ELECTRONICA
+        currency:
+          type: string
+          example: USD
+        country:
+          type: string
+        tax_rate:
+          type: string
+        options_title:
+          type: string
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/merch_option'
+        origins:
+          type: array
+          items:
+            $ref: '#/components/schemas/merch_origin'
+        arts:
+          type: array
+          items:
+            $ref: '#/components/schemas/merch_art'
+        album_art:
+          type: string
+        album_art_id:
+          type: integer
+          format: int64
+          example: '1435160440'
+        shipping_exception_mode:
+          type: boolean
+        download_type:
+          type: string
+          example: a
+        download_id:
+          type: integer
+          format: int64
+          example: '1961406664'
+        download_is_preorder:
+          type: integer
+          format: int64
+          example: '1'
+        download_release_date:
+          type: string
+          example: '30 Jun 2022 00:00:00 GMT'
+        download_title:
+          type: string
+          example: Neon Memories
+        download_url:
+          type: string
+          example: 'https://deathsdynamicshroud.bandcamp.com/album/neon-memories'
+        download_has_audio:
+          type: boolean
+        download_track_count:
+          type: integer
+          format: int64
+          example: '1'
+        download_art_id:
+          type: integer
+          format: int64
+          example: '1435160440'
+        download_artist:
+          type: string
+          example: death's dynamic shroud
+        fulfillment_days:
+          type: integer
+          format: int64
+          example: '3'
+        release_date:
+          type: string
+          example: '31 Jul 2022 00:00:00 GMT'
+        new_date:
+          type: string
+          example: '06 Jun 2022 23:43:05 GMT'
+        edition_size:
+          type: integer
+          format: int64
+          example: '500'
+        quantity_sold:
+          type: integer
+          format: int32
+          example: '70'
+        quantity_available:
+          type: integer
+          format: int32
+          example: '0'
+        quantity_limits:
+          type: integer
+          format: int32
+          example: '1'
+        quantity_warning:
+          type: boolean
+        album_id:
+          type: integer
+          format: int64
+          example: '1961406664'
+        album_title:
+          type: string
+          example: Neon Memories
+        album_artist:
+          type: string
+        album_private:
+          type: boolean
+        album_publish_date:
+          type: string
+          example: '13 Apr 2022 04:04:25 GMT'
+        album_release_date:
+          type: string
+          example: '30 Jun 2022 00:00:00 GMT'
+        subscriber_only_published:
+          type: boolean
+        featured_date:
+          type: string
+        certified_seller:
+          type: integer
+          format: int64
+          example: '1'
+        limited_checkout:
+          type: boolean
+        associated_license_id:
+          type: integer
+          format: int64
+        live_event_scheduled_start_date:
+          type: string
+        live_event_scheduled_end_date:
+          type: string
+        live_event_start_date:
+          type: string
+        live_event_end_date:
+          type: string
+        live_event_timezone:
+          type: string
+        live_event_type:
+          type: string
+        listening_party_duration:
+          #TODO
+          type: string
+        is_cardable:
+          type: boolean
+        currency_info:
+          $ref: '#/components/schemas/currency'
+        price_max:
+          type: number
+          example: '1000.0'
+        artist:
+          type: string
+          example: death's dynamic shroud
+        discounts:
+          type: object
+          properties:
+            band:
+              $ref: '#/components/schemas/discount'
+            selling_band:
+              $ref: '#/components/schemas/discount'
+
+    mob_merch_details_rs:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        merch:
+          type: array
+          items:
+            $ref: '#/components/schemas/mob_merch'
+
+    currency_country:
+      type: object
+      properties:
+        common_name:
+          type: string
+          example: Afghanistan
+        currency_name:
+          type: string
+          example: Dollar
+        currency_code:
+          type: string
+          example: USD
+        code:
+          type: string
+          example: AF
+
+    mob_currencies_rs:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        countries:
+          type: array
+          items:
+            $ref: '#/components/schemas/currency_country'
+        info:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/currency'
+        rates:
+          type: object
+          additionalProperties:
+            type: number
+            example: '0.5'
+        digital_vat_rates:
+          type: object
+          additionalProperties:
+            type: number
+            example: '0.5'
+
+    collectors_rq:
+      type: object
+      properties:
+        tralbum_type:
+          $ref: '#/components/schemas/tralbum_type'
+        tralbum_id:
+          type: integer
+          format: int64
+          example: '4152046122'
+        token:
+          type: string
+          example: '1:1555762938:723464:1:1:0'
+        count:
+          type: integer
+          format: int32
+        exclude_fan_ids:
+          type: array
+          items:
+            type: integer
+            format: int64
+      required:
+        - tralbum_id
+        - tralbum_type
+
+    review:
+      type: object
+      properties:
+        fan_id:
+          type: integer
+          format: int64
+          example: '1272071'
+        featured_track_id:
+          type: integer
+          format: int64
+          example: '2311377775'
+        username:
+          type: string
+          example: littlequack
+        name:
+          type: string
+          example: littlequack
+        url:
+          type: string
+          example: 'https://bandcamp.com/littlequack'
+        why:
+          type: string
+          example: >-
+            This felt like a very well made Album with a song for each different
+            taste yet still holding that catchy vibe to it all along! Great
+            Stuff!
+        item_type:
+          type: string
+          example: a
+        item_id:
+          type: integer
+          format: int64
+          example: '4152046122'
+        mod_date:
+          type: string
+          example: '30 Dec 2018 03:21:39 GMT'
+        image_id:
+          type: integer
+          format: int64
+          example: '9330266'
+        is_montage_image:
+          type: boolean
+        token:
+          type: string
+          example: '1:1546140099:1272071:1:1:0'
+        fav_track_title:
+          type: string
+          example: Last Dance of The Night
+
+    reviews_rs:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/review'
+        more_available:
+          type: boolean
+
+    #TODO: mobile
+    thumbs_rs:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/review'
+        more_available:
+          type: boolean
+
+    geoname_search_rq:
+      type: object
+      properties:
+        q:
+          type: string
+          example: florida
+        n:
+          type: integer
+          format: int32
+          example: '5'
+        geocoder_fallback:
+          type: boolean
+      required:
+        - q
+
+    geoname_search_rs:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/geoname'
+        count:
+          type: integer
+          format: int64
+          example: '5'
+
+    geoname_lookup_rs:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        result:
+          type: string
+          example: Florida
+
+    get_shows_rq:
+      type: object
+      properties:
+        older_than_token:
+          type: string
+          example: '1674428400:5901'
+
+    show:
+      type: object
+      properties:
+        artist:
+          type: string
+          example: Bre Maa
+        currency:
+          type: string
+          example: USD
+        description:
+          type: string
+        doors_open:
+          type: boolean
+        event_id:
+          type: integer
+          format: int64
+          example: '5902'
+        event_type:
+          type: string
+          example: t
+        image_id:
+          type: integer
+          format: int64
+          example: '30989797'
+        includes_digital:
+          type: boolean
+        is_attending:
+          type: boolean
+        is_nyp:
+          type: boolean
+        live_event_url:
+          type: string
+          example: 'https://bremaa.bandcamp.com/live/the-love-restoration-experience-5'
+        live_ticket_url:
+          type: string
+          example: 'https://bremaa.bandcamp.com/merch/the-love-restoration-experience-5'
+        price:
+          type: object
+          properties:
+            amount:
+              type: integer
+              format: int64
+              example: '200'
+            currency:
+              type: string
+              example: USD
+            is_money:
+              type: boolean
+        scheduled_start_date:
+          type: string
+          example: '22 Jan 2023 23:00:00 GMT'
+        selected_timezone:
+          type: string
+          example: America/Los_Angeles
+        start_date:
+          type: string
+        state:
+          type: string
+          example: preview
+        ticket_package_id:
+          type: integer
+          format: int64
+          example: '3647618294'
+        title:
+          type: string
+          example: The Love Restoration Experience
+        token:
+          type: string
+          example: '1674428400:5902'
+
+    get_shows_rs:
+      type: object
+      properties:
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/show'
+
+    event_item:
+      type: object
+      properties:
+        utc_date:
+          type: number
+          format: float
+          example: '1674304922.1518283'
+        artist_name:
+          type: string
+          example: Eden Burns
+        item_type:
+          type: string
+          example: a
+        item_description:
+          type: string
+          example: Tubbs & Burns
+        album_title:
+          type: string
+        slug_type:
+          type: string
+          example: a
+          enum:
+            - a
+            - t
+            - p
+        track_album_slug_text:
+          type: string
+        currency:
+          type: string
+          example: EUR
+        amount_paid:
+          type: number
+        item_price:
+          type: number
+        amount_paid_usd:
+          type: number
+          example: '7.61'
+        country:
+          type: string
+          example: Ireland
+        art_id:
+          type: integer
+          format: int64
+          example: '3177672873'
+        releases:
+          type: integer
+          format: int64
+        package_image_id:
+          type: integer
+          format: int64
+        url:
+          type: string
+          example: //edenburns.bandcamp.com/album/tubbs-burns
+        country_code:
+          type: string
+          example: ie
+        amount_paid_fmt:
+          type: string
+          example: €7
+        amount_over_fmt:
+          type: string
+          example: €7
+        addl_count:
+          type: integer
+          format: int32
+        item_slug:
+          type: string
+        art_url:
+          type: string
+          example: 'https://f4.bcbits.com/img/a3177672873_7.jpg'
+
+    event:
+      type: object
+      properties:
+        event_type:
+          type: string
+          example: sale
+        utc_date:
+          type: number
+          format: float
+          example: '1674304922.0247'
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/event_item'
+
+    sales_feed_rs:
+      type: object
+      properties:
+        start_date:
+          type: integer
+          format: int64
+          example: '1674304920'
+        end_date:
+          type: integer
+          format: int64
+          example: '1674305520'
+        data_delay_sec:
+          type: integer
+          format: int64
+          example: '120'
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/event'
+        server_time:
+          type: integer
+          format: int64
+          example: '1674305529'
+
+
