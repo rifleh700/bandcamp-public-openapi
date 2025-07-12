@@ -913,7 +913,21 @@ components:
         item_type:
           $ref: '#/components/schemas/item_type'
 
+    streaming_format:
+      type: string
+      enum:
+        - aac-hi
+        - aiff-lossless
+        - alac
+        - flac
+        - mp3-128
+        - mp3-320
+        - mp3-v0
+        - vorbis
+        - wav
+
     streaming_url:
+      description: Key is 'streaming_format'. Usually only 'mp3-128' key is available.
       type: object
       additionalProperties:
         type: string
