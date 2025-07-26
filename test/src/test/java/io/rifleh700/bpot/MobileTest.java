@@ -78,7 +78,6 @@ public class MobileTest {
 
             BandDetails details = mobileApi.mobile24BandDetailsGet(id);
             String packageIds = details.getMerch().stream().map(v -> String.valueOf(v.getId())).collect(Collectors.joining(","));
-            log.info("band ID: {}, package IDs: {}", id, packageIds);
             mobileApi.mobile24MerchDetailsGet(id, packageIds);
         }
     }
@@ -89,8 +88,6 @@ public class MobileTest {
         for (long id : DataPool.BANDS) {
 
             DiscographyItem item = mobileApi.mobile24BandDetailsGet(id).getDiscography().get(0);
-            log.info("band ID: {}, item ID: {}", id, item.getItemId());
-
             mobileApi.mobile24TralbumDetailsGet(
                     id,
                     item.getItemId(),
@@ -105,8 +102,6 @@ public class MobileTest {
         for (long id : DataPool.BANDS) {
 
             DiscographyItem item = mobileApi.mobile24BandDetailsGet(id).getDiscography().get(0);
-            log.info("band ID: {}, item ID: {}", id, item.getItemId());
-
             mobileApi.mobile24TralbumLyricsGet(
                     item.getItemId(),
                     item.getItemType() == DiscographyItemType.ALBUM ?
@@ -120,19 +115,11 @@ public class MobileTest {
         for (long id : DataPool.BANDS) {
 
             DiscographyItem item = mobileApi.mobile24BandDetailsGet(id).getDiscography().get(0);
-            log.info("band ID: {}, item ID: {}", id, item.getItemId());
-
             mobileApi.mobile24TralbumTagsGet(
                     id,
                     item.getItemId(),
                     item.getItemType() == DiscographyItemType.ALBUM ?
                             TralbumType.A : TralbumType.T);
         }
-    }
-
-    @Test
-    public void tmp() {
-
-        log.info("RES: {}", String.format("test %s test", null));
     }
 }
