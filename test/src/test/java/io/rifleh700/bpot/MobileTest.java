@@ -6,14 +6,10 @@ import io.rifleh700.bpot.api.model.DiscographyItem;
 import io.rifleh700.bpot.api.model.DiscographyItemType;
 import io.rifleh700.bpot.api.model.TralbumType;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.stream.Collectors;
 
 public class MobileTest {
-
-    private static final Logger log = LoggerFactory.getLogger(MobileTest.class);
 
     private final MobileApi mobileApi;
 

@@ -28,7 +28,7 @@ import static java.lang.System.nanoTime;
 import static java.util.Objects.requireNonNullElse;
 import static java.util.Optional.of;
 import static java.util.UUID.randomUUID;
-import static org.apache.commons.lang3.StringUtils.*;
+import static org.apache.http.Consts.LF;
 
 
 @Provider
@@ -108,7 +108,7 @@ public class LoggedFilter implements ClientRequestFilter, ClientResponseFilter, 
 
         // Logs directly from filter in case no request body is expected as aroundReadFrom will not be called
         if (!(requestContext.hasEntity())) {
-            logRequest(EMPTY);
+            logRequest("");
         }
     }
 
@@ -124,7 +124,7 @@ public class LoggedFilter implements ClientRequestFilter, ClientResponseFilter, 
         context.setInputStream(teeInputStream);
         entity = context.proceed();
         String body = outputStream.toString();
-        if (isNotBlank(body)) {
+        if (!body.isBlank()) {
             logResponse(body);
         }
 
@@ -141,7 +141,7 @@ public class LoggedFilter implements ClientRequestFilter, ClientResponseFilter, 
         log.info("{} {}{}{}",
                 getMdc(REQUEST_METHOD),
                 getMdc(REQUEST_URI),
-                isNotBlank(requestBody) ? LF : EMPTY,
+                !requestBody.isBlank() ? LF : "",
                 requestBody);
     }
 
@@ -157,7 +157,7 @@ public class LoggedFilter implements ClientRequestFilter, ClientResponseFilter, 
 
         // Logs directly from filter in case no response body is present as aroundWriteTo will not be called
         if (!responseContext.hasEntity()) {
-            logResponse(EMPTY);
+            logResponse("");
         }
     }
 
@@ -171,7 +171,7 @@ public class LoggedFilter implements ClientRequestFilter, ClientResponseFilter, 
             context.setOutputStream(teeOutputStream);
             context.proceed();
 
-            logRequest(requireNonNullElse(outputStream.toString(), EMPTY));
+            logRequest(requireNonNullElse(outputStream.toString(), ""));
         }
     }
 
@@ -182,7 +182,7 @@ public class LoggedFilter implements ClientRequestFilter, ClientResponseFilter, 
                     getMdc(REQUEST_URI),
                     getMdc(RESPONSE_STATUS),
                     getMdc(DURATION),
-                    isNotBlank(responseBody) ? LF : EMPTY,
+                    !responseBody.isBlank() ? LF : "",
                     responseBody);
 
         } finally {

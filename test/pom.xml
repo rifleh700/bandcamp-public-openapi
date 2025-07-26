@@ -51,9 +51,9 @@
             <version>${resteasy.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.chavaillaz</groupId>
-            <artifactId>jaxrs-logging</artifactId>
-            <version>3.1.0</version>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.18.0</version>
         </dependency>
 
         <!-- Logging -->

@@ -5,12 +5,8 @@ import io.rifleh700.bpot.api.model.AcElasticRq;
 import io.rifleh700.bpot.api.model.ItemType;
 import io.rifleh700.bpot.api.model.PrefixRq;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class BcSearchTest {
-
-    private static final Logger log = LoggerFactory.getLogger(BcSearchTest.class);
 
     private final BcsearchPublicApiApi search;
 
