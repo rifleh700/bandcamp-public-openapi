@@ -3208,6 +3208,9 @@ components:
           type: integer
           format: int64
           example: '0'
+        public_playlist_count:
+          type: integer
+          format: int64
 
     mob_fan_collection_review:
       type: object
