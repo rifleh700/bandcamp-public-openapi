@@ -21,7 +21,7 @@ public class WeeklyTest {
     @Test
     public void get() {
 
-        BcweeklyListRs rs = weekly.bcweekly3ListGet(10, 0);
+        BcweeklyListRs rs = weekly.bcweekly3ListGet(1000, 0);
         weekly.bcweekly3GetGet(rs.getResults().get(0).getId());
     }
 }

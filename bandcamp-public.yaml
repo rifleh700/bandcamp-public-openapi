@@ -1422,7 +1422,8 @@ components:
           type: string
           example: >-
             search_item_id=40247404&search_item_type=b&search_match_part=%3F&search_page_id=2319640601&search_page_no=0&search_rank=1
-
+        following:
+          type: boolean
 
     found_tag:
       type: object
