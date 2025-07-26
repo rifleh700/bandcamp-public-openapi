@@ -1,5 +1,6 @@
 package io.rifleh700.bpot;
 
+import io.rifleh700.bpot.logging.LoggedFilter;
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
 import jakarta.ws.rs.client.ClientBuilder;
@@ -16,6 +17,7 @@ public class RestEasyClientProxyFactory implements ClientProxyFactory {
         this.target = (ResteasyWebTarget) ClientBuilder
                 .newBuilder()
                 .register(new JsonbConfiguration())
+                .register(LoggedFilter.class)
                 .build()
                 .target("https://bandcamp.com/api");
     }

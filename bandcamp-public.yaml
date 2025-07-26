@@ -46,9 +46,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/bcweekly_list_item'
+                $ref: '#/components/schemas/bcweekly_list_rs'
 
   /bcweekly/3/get:
     get:
@@ -1224,6 +1222,10 @@ components:
               type: integer
               format: int64
               example: '2445413003'
+            stream_type:
+              type: integer
+              format: int64
+              example: '101'
             format:
               type: integer
               format: int64
@@ -1325,6 +1327,14 @@ components:
               url:
                 type: string
                 example: 'https://headnodic.bandcamp.com/album/junk-drawer-vol-2'
+
+    bcweekly_list_rs:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/bcweekly_list_item'
 
     ac_elastic_rq:
       type: object
