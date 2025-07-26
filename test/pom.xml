@@ -101,7 +101,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <generatorName>java-microprofile</generatorName>
+                            <generatorName>java</generatorName>
                             <inputSpec>${project.basedir}/../bandcamp-public.yaml</inputSpec>
                             <output>${project.build.directory}/generated-sources/bandcamp</output>
                             <apiPackage>${bandcamp.api.package}</apiPackage>

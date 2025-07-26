@@ -143,20 +143,13 @@ paths:
           description: Sort
           required: false
           schema:
-            type: string
-            enum:
-              - top
-              - new
-              - rec
+            $ref: '#/components/schemas/discover_sort'
         - name: r
           in: query
           description: Recommendations
           required: false
           schema:
-            type: string
-            enum:
-              - most
-              - latest
+            $ref: '#/components/schemas/discover_rec'
         - name: f
           in: query
           description: Format
@@ -177,6 +170,7 @@ paths:
           schema:
             type: integer
             format: int32
+            default: 1
       responses:
         '200':
           description: Temp desc
@@ -206,22 +200,15 @@ paths:
         - name: s
           in: query
           description: Sort
-          required: true
+          required: false
           schema:
-            type: string
-            enum:
-              - top
-              - new
-              - rec
+            $ref: '#/components/schemas/discover_sort'
         - name: r
           in: query
           description: Recommendations
           required: false
           schema:
-            type: string
-            enum:
-              - most
-              - latest
+            $ref: '#/components/schemas/discover_rec'
         - name: f
           in: query
           description: Format
@@ -238,10 +225,11 @@ paths:
         - name: p
           in: query
           description: Page
-          required: true
+          required: false
           schema:
             type: integer
             format: int32
+            default: 1
       responses:
         '200':
           description: Temp desc
@@ -1709,7 +1697,18 @@ components:
             ?action_sig=21a64f8bc12e425a1848976fa25cc72f&action_url=https%3A%2F%2Fbandcamp.com&band_id=810851956&item_id=817797480&item_type=a
     
     
-    
+    discover_sort:
+      type: string
+      enum:
+        - top
+        - new
+        - rec
+
+    discover_rec:
+      type: string
+      enum:
+        - most
+        - latest
 
     discover_rs:
       type: object
@@ -1725,12 +1724,11 @@ components:
               type: string
               example: electronic
             s:
-              type: string
-              example: top
+              $ref: '#/components/schemas/discover_sort'
             f:
-              $ref: '#/components/schemas/format'
-            r:
               type: string
+            r:
+              $ref: '#/components/schemas/discover_rec'
             w:
               type: integer
               format: int64
@@ -1789,12 +1787,41 @@ components:
         geoname:
           $ref: '#/components/schemas/geoname'
 
+    slice:
+      type: string
+      enum:
+        - top
+        - new
+        - rand
+      default: top
+
+    discover_type:
+      type: string
+      enum:
+        - a
+        - s
+
     discover_web_rq:
       type: object
       properties:
         category_id:
           type: integer
           format: int32
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+            - 4
+            - 5
+          x-enum-varnames:
+            - ALL
+            - DIGITAL
+            - VINYL
+            - COMPACT_DISCS
+            - CASSETTES
+            - T_SHIRTS
+          default: 0
         tag_norm_names:
           type: array
           items:
@@ -1802,24 +1829,23 @@ components:
         geoname_id:
           type: integer
           format: int64
+          default: 0
         slice:
-          type: string
+          $ref: '#/components/schemas/slice'
         time_facet_id:
           type: integer
           format: int64
         cursor:
           type: string
+          default: '*'
         size:
           type: integer
           format: int32
+          default: 60
         include_result_types:
           type: array
           items:
-            #TODO
-            type: string
-            enum:
-              - a
-              - s
+            $ref: '#/components/schemas/discover_type'
 
     discover_package_item:
       type: object
@@ -1873,9 +1899,11 @@ components:
         item_image_id:
           type: integer
           format: int64
+        tshirt_secondary_image_id:
+          type: integer
+          format: int64
         result_type:
-          #TODO: enum
-          type: string
+          $ref: '#/components/schemas/discover_type'
         band_id:
           type: integer
           format: int64
@@ -1921,6 +1949,10 @@ components:
               format: float
             stream_url:
               type: string
+        label_name:
+          type: string
+        label_url:
+          type: string
         band_location:
           type: string
         track_count:
@@ -1932,7 +1964,6 @@ components:
         item_tags:
           #TODO
           type: string
-
 
     discover_web_rs:
       type: object
@@ -1949,6 +1980,9 @@ components:
           format: int32
         cursor:
           type: string
+        discover_spec_id:
+          type: integer
+          format: int32
 
     fan_collection_rq:
       type: object
